@@ -25,7 +25,7 @@ def rewrite_to_sgmodule(js_content, project_name):
 
     # Generate sgmodule content
     sgmodule_content = f"""#!name={project_name}
-#!desc=融合版，包括墨鱼去开屏2.0、喜马拉雅、哔哩哔哩、微博、油管、KEEP、贴吧、知乎、高德地图、小红书、网易云、百度地图、什么值得买、菜鸟、彩云天气
+#!desc=融合版[GithubAction自动更新]，包括墨鱼去开屏2.0、喜马拉雅、哔哩哔哩、微博、油管、KEEP、贴吧、知乎、高德地图、小红书、网易云、百度地图、什么值得买、菜鸟、彩云天气
 #!author=ddgksf2013
 #!url=https://github.com/ddgksf2013
 
@@ -39,7 +39,7 @@ def rewrite_to_sgmodule(js_content, project_name):
     
     # Regex patterns
     rewrite_local_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(reject|reject-200|reject-img|reject-dict|reject-array)'
-    script_pattern = r'^(?!.*#.*)(.*?)\s*url\s+(script-response-body|script-request-body|script-echo-response|script-request-header|script-response-header|script-analyze-echo-response)\s+(\S+)'
+    script_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(script-response-body|script-request-body|script-echo-response|script-request-header|script-response-header|script-analyze-echo-response)\s+(\S+)'
     mitm_local_pattern = r'^\s*hostname\s*=\s*([^\n#]*)\s*(?=#|$)'
 
     # Process URL rewrite rules
@@ -111,7 +111,7 @@ if __name__ == "__main__":
         exit(1)
 
     # Define project name (customize as needed)
-    project_name = "墨鱼去广告"
+    project_name = "墨鱼去广告模块"
 
     # Process the URLs
     process_urls([url.strip() for url in urls if url.strip()], project_name)
