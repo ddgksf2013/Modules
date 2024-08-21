@@ -115,4 +115,3 @@ if __name__ == "__main__":
 
     # Process the URLs
     process_urls([url.strip() for url in urls if url.strip()], project_name)
-    input("Press Enter to exit...")
