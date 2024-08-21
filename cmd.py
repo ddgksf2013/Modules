@@ -1,8 +1,3 @@
-import os
-import requests
-import re
-
-
 def download_content(url):
     try:
         response = requests.get(url)
@@ -88,6 +83,7 @@ def process_urls(urls, project_name):
     if sgmodule_content:
         output_file = 'Adblock.sgmodule'
         save_content(sgmodule_content, output_file)
+        print(sgmodule_content);
         print(f"Successfully converted and saved to {output_file}")
     else:
         print("Combined content does not meet the requirements for conversion.")
