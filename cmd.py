@@ -1,3 +1,7 @@
+import os
+import requests
+import re
+
 def download_content(url):
     try:
         response = requests.get(url)
