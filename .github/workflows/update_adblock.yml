@@ -3,7 +3,7 @@ name: Update Adblock Module
 on:
   schedule:
     - cron: '0 */4 * * *'  # 每天的午夜运行一次（UTC时间）
-
+  workflow_dispatch:  # 允许手动触发
 jobs:
   build:
     runs-on: ubuntu-latest
