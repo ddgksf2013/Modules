@@ -31,3 +31,6 @@ jobs:
         author_name: 'GitHub Actions'
         author_email: 'ddgksf2013@github.com'
         message: 'Update Adblock.sgmodule'
+        push: true  # Ensure this is set to true to enable pushing
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
