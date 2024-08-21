@@ -70,7 +70,7 @@ def rewrite_to_sgmodule(js_content, project_name):
 
 [MITM]
 
-hostname = %INSERT% {mitm_match_content}
+hostname = %APPEND% {mitm_match_content}
 """
     return sgmodule_content
 
