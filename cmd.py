@@ -28,7 +28,7 @@ def rewrite_to_sgmodule(js_content, project_name):
     sgmodule_content = f"""#!name={project_name}
 #!desc=融合版[由GithubAction自动更新]，包括墨鱼去开屏2.0、喜马拉雅、哔哩哔哩、微博、油管、KEEP、贴吧、知乎、高德地图、小红书、网易云、百度地图、什么值得买、菜鸟、彩云天气
 #!author=ddgksf2013
-#!logtime={timestamp} +8
+#!utctime={timestamp}
 #!giturl=https://github.com/ddgksf2013
 #!tgchannels=https://t.me/ddgksf2021
 #!moduleurl=https://github.com/ddgksf2013/Modules/raw/main/Adblock.sgmodule
