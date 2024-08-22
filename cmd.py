@@ -2,6 +2,7 @@ import os
 import requests
 import re
 import time
+import datetime
 
 def download_content(url):
     try:
@@ -23,12 +24,14 @@ def rewrite_to_sgmodule(js_content, project_name):
     # Check for the presence of the hostname section
     if not re.search(r'hostname', js_content, re.IGNORECASE):
         return None
-    timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
+    utc_time = datetime.datetime.utcnow()
+    beijing_time = utc_time + datetime.timedelta(hours=8)
+    timestamp = beijing_time.strftime("%Y-%m-%d %H:%M:%S")
     # Generate sgmodule content
     sgmodule_content = f"""#!name={project_name}
-#!desc=融合版[由GithubAction自动更新]，包括墨鱼去开屏2.0、喜马拉雅、哔哩哔哩、微博、油管、KEEP、贴吧、知乎、高德地图、小红书、网易云、百度地图、什么值得买、菜鸟、彩云天气
+#!desc=融合版[由GithubAction自动更新]，包括墨鱼去开屏2.0、喜马拉雅、哔哩哔哩、微博、油管、KEEP、贴吧、知乎、高德地图、小红书、网易云、百度地图、什么值得买、菜鸟、彩云天气、豆瓣网页
 #!author=ddgksf2013
-#!utctime={timestamp}
+#!logtime={timestamp}
 #!giturl=https://github.com/ddgksf2013
 #!tgchannels=https://t.me/ddgksf2021
 #!moduleurl=https://github.com/ddgksf2013/Modules/raw/main/Adblock.sgmodule
@@ -48,24 +51,29 @@ def rewrite_to_sgmodule(js_content, project_name):
     rewrite_local_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(reject|reject-200|reject-img|reject-dict|reject-array)'
     script_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(script-response-body|script-request-body|script-echo-response|script-request-header|script-response-header|script-analyze-echo-response)\s+(\S+)'
     body_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(response-body)\s+(\S+)\s+(response-body)\s+(\S+)'
+    echo_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(echo-response)\s+(\S+)\s+(echo-response)\s+(\S+)'
     mitm_local_pattern = r'^\s*hostname\s*=\s*([^\n#]*)\s*(?=#|$)'
 
     # Process URL rewrite rules
     for match in re.finditer(rewrite_local_pattern, js_content, re.MULTILINE):
         pattern = match.group(1).strip()
         sgmodule_content += f"{pattern} - reject\n"
+    sgmodule_content += f"""
+
+[Map Local]
+
+"""
+    for match in re.finditer(echo_pattern, js_content, re.MULTILINE):
+        pattern = match.group(1).strip()
+        re1 = match.group(3).strip()
+        re2 = match.group(5).strip()
+        sgmodule_content += f'{pattern} data="{re2}" header="Content-Type: text/html"\n'
 
     sgmodule_content += f"""
 [Script]
 
 """
     # Process script rules
-	#test = type=http-response,pattern=https://service.ilovepdf.com/v1/user,requires-body=1,script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, argument=false->true
-    for match in re.finditer(body_pattern, js_content, re.MULTILINE):
-        pattern = match.group(1).strip()
-        re1 = match.group(3).strip()
-        re2 = match.group(5).strip()
-        sgmodule_content += f"replace-body =type=http-response, pattern={pattern}, script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=true, argument={re1}->{re2},max-size=-1, timeout=60\n"
 
     for match in re.finditer(script_pattern, js_content, re.MULTILINE):
         pattern = match.group(1).strip()
@@ -77,9 +85,15 @@ def rewrite_to_sgmodule(js_content, project_name):
         needbody = "true" if script_type_raw in ['script-response-body', 'script-echo-response', 'script-response-header', 'script-request-body', 'script-analyze-echo-response'] else "false"
         
         sgmodule_content += f"{filename} =type=http-{script_type}, pattern={pattern}, script-path={script_path}, requires-body={needbody}, max-size=-1, timeout=60\n"
+    for match in re.finditer(body_pattern, js_content, re.MULTILINE):
+        pattern = match.group(1).strip()
+        re1 = match.group(3).strip()
+        re2 = match.group(5).strip()
+        sgmodule_content += f"replace-body =type=http-response, pattern={pattern}, script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=true, argument={re1}->{re2},max-size=-1, timeout=60\n"
 
     # Process MITM
     mitm_match_content = ','.join(match.group(1).strip() for match in re.finditer(mitm_local_pattern, js_content, re.MULTILINE))
+
     sgmodule_content += f"""
 
 [MITM]
