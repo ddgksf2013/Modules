@@ -3,7 +3,6 @@ https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/Ximalaya.conf
 https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/Bilibili.conf
 https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/Weibo.conf
 https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/KeepStyle.conf
-https://github.com/app2smile/rules/raw/master/module/tieba-qx.conf
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zheye/zheye.snippet
 https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/Amap.conf
 https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/XiaoHongShu.conf
