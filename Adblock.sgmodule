@@ -1,7 +1,7 @@
 #!name=墨鱼去广告模块
 #!desc=融合版[由GithubAction自动更新]，包括墨鱼去开屏2.0、喜马拉雅、哔哩哔哩、微博、油管、KEEP、贴吧、知乎、高德地图、小红书、网易云、百度地图、什么值得买、菜鸟、彩云天气、豆瓣网页
 #!author=ddgksf2013
-#!logtime=2024-08-22 09:39:04
+#!logtime=2024-08-22 10:39:08
 #!giturl=https://github.com/ddgksf2013
 #!tgchannels=https://t.me/ddgksf2021
 #!moduleurl=https://github.com/ddgksf2013/Modules/raw/main/Adblock.sgmodule
@@ -666,18 +666,18 @@ caiyun_json.js =type=http-response, pattern=^https?:\/\/starplucker\.cyapi\.cn\/
 caiyun_json.js =type=http-response, pattern=^https?:\/\/starplucker\.cyapi\.cn\/v\d/operation/features, script-path=https://github.com/ddgksf2013/Scripts/raw/master/caiyun_json.js, requires-body=true, max-size=-1, timeout=60
 caiyun_json.js =type=http-response, pattern=^https?:\/\/starplucker\.cyapi\.cn\/v\d/campaigns, script-path=https://github.com/ddgksf2013/Scripts/raw/master/caiyun_json.js, requires-body=true, max-size=-1, timeout=60
 douban.js =type=http-response, pattern=^https?:\/\/m\.douban\.com\/(home_guide|movie|tv|book|group|music), script-path=https://github.com/ddgksf2013/Scripts/raw/master/douban.js, requires-body=true, max-size=-1, timeout=60
-replace-body =type=http-response, pattern=https://beta-api.crunchyroll.com/cms, script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=true, argument=offset_ms":\d+->offset_ms":99999999999999,max-size=-1, timeout=60
-replace-body =type=http-response, pattern=^https?:\/\/maicai\.api\.ddxq\.mobi\/advert\/getAd, script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=true, argument=rt_time":\d{2}->rt_time":40,max-size=-1, timeout=60
-replace-body =type=http-response, pattern=^https?:\/\/www\.flyert\.com\/api\/mobile\/index\.php\?version=\d&mobile=yes&module=basicdata&type=forumlist, script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=true, argument=adv->ddgksf2013,max-size=-1, timeout=60
-replace-body =type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising, script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=true, argument=jdLiteAdvertisingVO->ddgksf2013,max-size=-1, timeout=60
-replace-body =type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_SmartPush, script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=true, argument=pushData->ddgksf2013,max-size=-1, timeout=60
-replace-body =type=http-response, pattern=^https?:\/\/res.kfc.com.cn\/CRM\/kfcad\/apphome6\/apphome.*json, script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=true, argument=bootStrapAd->ddgksf2013,max-size=-1, timeout=60
-replace-body =type=http-response, pattern=^https?:\/\/apapia-sqk\.manmanbuy\.com\/index_json\.ashx, script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=true, argument=splashAD->ddgksf2013,max-size=-1, timeout=60
-replace-body =type=http-response, pattern=^https?:\/\/careapi\.oclean\.com\/mall\/v\d\/User\/GetUserCenter, script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=true, argument=banner"->ddgksf2013",max-size=-1, timeout=60
-replace-body =type=http-response, pattern=^https?:\/\/sh-gateway\.shihuo\.cn\/v\d\/services\/sh-adapi\/home\/screen, script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=true, argument=egin_time":"\d{4}->egin_time":"2099,max-size=-1, timeout=60
-replace-body =type=http-response, pattern=^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\/api\/appAd, script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=true, argument=officialAdvertResultVo->ddgksf2013,max-size=-1, timeout=60
-replace-body =type=http-response, pattern=^https?:\/\/lcen\.xiaote\.net\/api\/graphql, script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=true, argument=screenSplashAd->ddgksf2013,max-size=-1, timeout=60
-replace-body =type=http-response, pattern=^https?:\/\/apps\.workair\.cn\/app\/version, script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=true, argument=ads"->ddgksf2013",max-size=-1, timeout=60
+replace-body.js =type=http-response, pattern=https://beta-api.crunchyroll.com/cms, script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=true, argument=offset_ms":\d+->offset_ms":99999999999999,max-size=-1, timeout=60
+replace-body.js =type=http-response, pattern=^https?:\/\/maicai\.api\.ddxq\.mobi\/advert\/getAd, script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=true, argument=rt_time":\d{2}->rt_time":40,max-size=-1, timeout=60
+replace-body.js =type=http-response, pattern=^https?:\/\/www\.flyert\.com\/api\/mobile\/index\.php\?version=\d&mobile=yes&module=basicdata&type=forumlist, script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=true, argument=adv->ddgksf2013,max-size=-1, timeout=60
+replace-body.js =type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising, script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=true, argument=jdLiteAdvertisingVO->ddgksf2013,max-size=-1, timeout=60
+replace-body.js =type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_SmartPush, script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=true, argument=pushData->ddgksf2013,max-size=-1, timeout=60
+replace-body.js =type=http-response, pattern=^https?:\/\/res.kfc.com.cn\/CRM\/kfcad\/apphome6\/apphome.*json, script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=true, argument=bootStrapAd->ddgksf2013,max-size=-1, timeout=60
+replace-body.js =type=http-response, pattern=^https?:\/\/apapia-sqk\.manmanbuy\.com\/index_json\.ashx, script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=true, argument=splashAD->ddgksf2013,max-size=-1, timeout=60
+replace-body.js =type=http-response, pattern=^https?:\/\/careapi\.oclean\.com\/mall\/v\d\/User\/GetUserCenter, script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=true, argument=banner"->ddgksf2013",max-size=-1, timeout=60
+replace-body.js =type=http-response, pattern=^https?:\/\/sh-gateway\.shihuo\.cn\/v\d\/services\/sh-adapi\/home\/screen, script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=true, argument=egin_time":"\d{4}->egin_time":"2099,max-size=-1, timeout=60
+replace-body.js =type=http-response, pattern=^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\/api\/appAd, script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=true, argument=officialAdvertResultVo->ddgksf2013,max-size=-1, timeout=60
+replace-body.js =type=http-response, pattern=^https?:\/\/lcen\.xiaote\.net\/api\/graphql, script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=true, argument=screenSplashAd->ddgksf2013,max-size=-1, timeout=60
+replace-body.js =type=http-response, pattern=^https?:\/\/apps\.workair\.cn\/app\/version, script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=true, argument=ads"->ddgksf2013",max-size=-1, timeout=60
 
 
 [MITM]
