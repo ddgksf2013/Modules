@@ -67,8 +67,10 @@ def rewrite_to_sgmodule(js_content, project_name):
         pattern = match.group(1).strip()
         re1 = match.group(3).strip()
         re2 = match.group(5).strip()
-        sgmodule_content += f'{pattern} data="{re2}" header="Content-Type: text/html"\n'
-
+        if re1 == "text/html":
+            sgmodule_content += f'{pattern} data="{re2}" header="Content-Type: text/html"\n'
+        else:
+            sgmodule_content += f'{pattern} data="{re2}" header="Content-Type: text/json"\n'
     sgmodule_content += f"""
 [Script]
 
