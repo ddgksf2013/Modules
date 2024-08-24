@@ -33,7 +33,7 @@ def rewrite_to_sgmodule(js_content, project_name):
 #!author=ddgksf2013
 #!logtime={timestamp}
 #!giturl=https://github.com/ddgksf2013
-#!tgchannels=https://t.me/ddgksf2021
+#!tgchannel=https://t.me/ddgksf2021
 #!moduleurl=https://github.com/ddgksf2013/Modules/raw/main/Adblock.sgmodule
 
 
