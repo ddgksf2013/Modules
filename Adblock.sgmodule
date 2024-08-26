@@ -1,7 +1,7 @@
 #!name=墨鱼去广告模块
-#!desc=融合版[由GithubAction自动更新]，包括墨鱼去开屏2.0、喜马拉雅、哔哩哔哩、微博、KEEP、知乎、高德地图、小红书、百度网盘、网易云、什么值得买、菜鸟、彩云天气、豆瓣网页
+#!desc=融合版[由GithubAction自动更新]，包括墨鱼去开屏2.0、喜马拉雅、哔哩哔哩、微博、KEEP、知乎、百度网盘、高德地图、小红书、网易云、什么值得买、菜鸟、彩云天气、豆瓣网页
 #!author=ddgksf2013
-#!logtime=2024-08-26 09:16:11
+#!logtime=2024-08-26 19:03:18
 #!giturl=https://github.com/ddgksf2013
 #!tgchannel=https://t.me/ddgksf2021
 #!moduleurl=https://github.com/ddgksf2013/Modules/raw/main/Adblock.sgmodule
@@ -509,12 +509,13 @@ https://community.feidee.com/api/v1/home/top - reject
 https://yun.feidee.net/cab-query-ws/v1/comet/vtable/score-card - reject
 https://moneymarket.ssjlicai.com/finance-common-operation-ws/api/actShelve/v1/actShelveShowTipInfo - reject
 https://yun.feidee.net/cab-draw-activity-ws/terminal/v1/draw-record/user-draw-result - reject
+^https?:\/\/afd\.baidu\.com\/rest\/.*\/membership\/proxy\/guide - reject
 ^https?:\/\/pan\.baidu\.com\/act\/v\d\/(bchannel|welfare)\/list - reject
 ^https?:\/\/pan\.baidu\.com\/rest\/.*\/pcs\/ad - reject
 ^https?:\/\/pan\.baidu\.com\/act\/api\/activityentry - reject
 ^https:\/\/pan\.baidu\.com\/feed\/hotlist - reject
-https://pan.baidu.com/queryintent/queryhint - reject
-https://pan.baidu.com/coins/center/notice - reject
+^https:\/\/pan\.baidu\.com\/queryintent\/queryhint - reject
+^https:\/\/pan\.baidu\.com\/coins\/center\/notice - reject
 
 
 [Map Local]
@@ -671,10 +672,10 @@ qidian.js =type=http-response, pattern=^https:\/\/magev6\.if\.qidian\.com\/argus
 suishouji.js =type=http-response, pattern=https://userapi.feidee.net/v1/profile/basic_info, script-path=https://raw.githubusercontent.com/ddgksf2013/MoYu/master/suishouji.js, requires-body=true, max-size=-1, timeout=60
 suishouji.js =type=http-response, pattern=https://yun.feidee.net/cab-vip-ws/terminal/v1/vip-users/show-info, script-path=https://raw.githubusercontent.com/ddgksf2013/MoYu/master/suishouji.js, requires-body=true, max-size=-1, timeout=60
 qq-news.js =type=http-response, pattern=^https:\/\/(news\.ssp\.qq\.com\/app|r\.inews\.qq\.com\/(get(QQNewsUnreadList|TagFeedList)|gw\/page\/(channel_feed|event_detail)|news_feed\/hot_module_list)), script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/qq-news.js, requires-body=true, max-size=-1, timeout=60
-baiduCloud.vip.js =type=http-response, pattern=^https?:\/\/pan\.baidu\.com\/api\/getsyscfg, script-path=https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.vip.js, requires-body=true, max-size=-1, timeout=60
-baiduCloud.vip.js =type=http-response, pattern=^https?:\/\/afd\.baidu\.com\/afd\/entry, script-path=https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.vip.js, requires-body=true, max-size=-1, timeout=60
-baiduCloud.vip.js =type=http-response, pattern=^https:\/\/pan\.baidu\.com\/rest\/.*\/membership\/user\?method=gamecenter, script-path=https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.vip.js, requires-body=true, max-size=-1, timeout=60
-baiduCloud.vip.js =type=http-response, pattern=https://pan.baidu.com/feed/cardinfos, script-path=https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.vip.js, requires-body=true, max-size=-1, timeout=60
+baiduCloud.adblock.js =type=http-response, pattern=^https?:\/\/pan\.baidu\.com\/api\/getsyscfg, script-path=https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.adblock.js, requires-body=true, max-size=-1, timeout=60
+baiduCloud.adblock.js =type=http-response, pattern=^https?:\/\/afd\.baidu\.com\/afd\/entry, script-path=https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.adblock.js, requires-body=true, max-size=-1, timeout=60
+baiduCloud.adblock.js =type=http-response, pattern=^https:\/\/pan\.baidu\.com\/rest\/.*\/membership\/user\?method=gamecenter, script-path=https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.adblock.js, requires-body=true, max-size=-1, timeout=60
+baiduCloud.adblock.js =type=http-response, pattern=^https:\/\/pan\.baidu\.com\/feed\/cardinfos, script-path=https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.adblock.js, requires-body=true, max-size=-1, timeout=60
 replace-body.js =type=http-response, pattern=https://beta-api.crunchyroll.com/cms, script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=true, argument=offset_ms":\d+->offset_ms":99999999999999,max-size=-1, timeout=60
 replace-body.js =type=http-response, pattern=^https?:\/\/maicai\.api\.ddxq\.mobi\/advert\/getAd, script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=true, argument=rt_time":\d{2}->rt_time":40,max-size=-1, timeout=60
 replace-body.js =type=http-response, pattern=^https?:\/\/www\.flyert\.com\/api\/mobile\/index\.php\?version=\d&mobile=yes&module=basicdata&type=forumlist, script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=true, argument=adv->ddgksf2013,max-size=-1, timeout=60
