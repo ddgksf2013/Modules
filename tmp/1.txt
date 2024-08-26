@@ -15,4 +15,3 @@ https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/Html/Douban.conf
 https://raw.githubusercontent.com/app2smile/rules/master/module/qidian.conf
 https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/SuiShouJi.conf
 https://raw.githubusercontent.com/app2smile/rules/master/module/qqnews.conf
-https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.vip.js
