@@ -91,7 +91,11 @@ RULE-SET,https://raw.githubusercontent.com/app2smile/rules/master/rule/tieba-ad.
         script_type = 'response' if script_type_raw in ['script-response-body', 'script-echo-response', 'script-response-header'] else 'request'
         needbody = "true" if script_type_raw in ['script-response-body', 'script-echo-response', 'script-response-header', 'script-request-body', 'script-analyze-echo-response'] else "false"
         
-        sgmodule_content += f"{filename} =type=http-{script_type}, pattern={pattern}, script-path={script_path}, requires-body={needbody}, max-size=-1, timeout=60\n"
+        script_content += f"{filename} =type=http-{script_type}, pattern={pattern}, script-path={script_path}, requires-body={needbody}, max-size=-1, timeout=60\n"
+    
+    script_content= '\n'.join(sorted(set(mitm_match_content.splitlines())))
+    sgmodule_content +=script_content
+    
     for match in re.finditer(body_pattern, js_content, re.MULTILINE):
         pattern = match.group(1).strip()
         re1 = match.group(3).strip()
@@ -100,7 +104,9 @@ RULE-SET,https://raw.githubusercontent.com/app2smile/rules/master/rule/tieba-ad.
 
     # Process MITM
     mitm_match_content = ','.join(match.group(1).strip() for match in re.finditer(mitm_local_pattern, js_content, re.MULTILINE))
-
+    unique_content = ','.join(sorted(set(mitm_match_content.split(','))))
+    mitm_match_content = unique_content
+    
     sgmodule_content += f"""
 
 [MITM]
