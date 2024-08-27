@@ -81,7 +81,7 @@ RULE-SET,https://raw.githubusercontent.com/app2smile/rules/master/rule/tieba-ad.
 
 """
     # Process script rules
-
+    script_content = ""
     for match in re.finditer(script_pattern, js_content, re.MULTILINE):
         pattern = match.group(1).strip()
         script_type_raw = match.group(2)
