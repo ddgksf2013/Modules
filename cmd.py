@@ -60,9 +60,12 @@ RULE-SET,https://raw.githubusercontent.com/app2smile/rules/master/rule/tieba-ad.
     mitm_local_pattern = r'^\s*hostname\s*=\s*([^\n#]*)\s*(?=#|$)'
 
     # Process URL rewrite rules
+    url_content = "";
     for match in re.finditer(rewrite_local_pattern, js_content, re.MULTILINE):
         pattern = match.group(1).strip()
-        sgmodule_content += f"{pattern} - reject\n"
+        url_content += f"{pattern} - reject\n"
+    url_content= '\n'.join(sorted(set(url_content.splitlines())))
+    sgmodule_content +=url_content
     sgmodule_content += f"""
 
 [Map Local]
