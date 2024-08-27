@@ -93,7 +93,7 @@ RULE-SET,https://raw.githubusercontent.com/app2smile/rules/master/rule/tieba-ad.
         
         script_content += f"{filename} =type=http-{script_type}, pattern={pattern}, script-path={script_path}, requires-body={needbody}, max-size=-1, timeout=60\n"
     
-    script_content= '\n'.join(sorted(set(mitm_match_content.splitlines())))
+    script_content= '\n'.join(sorted(set(script_content.splitlines())))
     sgmodule_content +=script_content
     
     for match in re.finditer(body_pattern, js_content, re.MULTILINE):
