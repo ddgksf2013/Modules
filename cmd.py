@@ -64,8 +64,10 @@ RULE-SET,https://raw.githubusercontent.com/app2smile/rules/master/rule/tieba-ad.
     for match in re.finditer(rewrite_local_pattern, js_content, re.MULTILINE):
         pattern = match.group(1).strip()
         url_content += f"{pattern} - reject\n"
-    url_content= '\n'.join(sorted(set(url_content.splitlines())))
-    sgmodule_content +=url_content
+    url_lines = url_content.splitlines()
+    unique_lines = [url_lines[0]] + sorted(set(url_lines[1:]))
+    url_content = '\n'.join(unique_lines)
+    sgmodule_content += url_content
     sgmodule_content += f"""
 
 [Map Local]
