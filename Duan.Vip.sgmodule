@@ -8,7 +8,8 @@
 
 [Script]
 # ～ Duan@ddgksf2013
-Duan.vip = type=http-response, pattern=^https?:\/\/app\.theinitium\.com\/subs\/[a-zA-Z_]+\/verify_subscription, script-path=https://github.com/ddgksf2013/MoYu/raw/master/DuanProCrack.js, requires-body=true, max-size=-1, timeout=60
+Duan.vip1 = type=http-response, pattern=^https?:\/\/app\.theinitium\.com\/subs\/[a-zA-Z_]+\/verify_subscription, script-path=https://github.com/ddgksf2013/MoYu/raw/master/DuanChuanMeiProCrack.js, requires-body=true, max-size=-1, timeout=60
+Duan.vip2 = type=http-response, pattern=^https?:\/\/api\.wallkit\.net\/api\/v\d/user, script-path=https://github.com/ddgksf2013/MoYu/raw/master/DuanChuanMeiProCrack.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
-hostname = %APPEND% app.theinitium.com
+hostname = %APPEND% app.theinitium.com, api.wallkit.net
