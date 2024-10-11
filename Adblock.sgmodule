@@ -2,7 +2,7 @@
 #!desc=融合版[由GithubAction自动更新]，包括墨鱼去开屏2.0、喜马拉雅、哔哩哔哩、微博、KEEP、知乎、百度网盘、高德地图、小红书、网易云、什么值得买、菜鸟、彩云天气、豆瓣网页
 #!author=ddgksf2013
 #!contributor=@blackmatrix7, @app2smile
-#!logtime=2024-10-11 09:43:16
+#!logtime=2024-10-12 04:22:33
 #!homepage=https://github.com/ddgksf2013
 #!tgchannel=https://t.me/ddgksf2021
 #!moduleurl=https://github.com/ddgksf2013/Modules/raw/main/Adblock.sgmodule
@@ -575,6 +575,7 @@ caiyun_json.js =type=http-response, pattern=^https?:\/\/starplucker\.cyapi\.cn\/
 caiyun_json.js =type=http-response, pattern=^https?:\/\/wrapper\.cyapi\.cn\/v\d\/activity, script-path=https://github.com/ddgksf2013/Scripts/raw/master/caiyun_json.js, requires-body=true, max-size=-1, timeout=60
 coolapk.js =type=http-response, pattern=^https?:\/\/api.coolapk.com\/v6\/main\/init, script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true, max-size=-1, timeout=60
 coolapk.js =type=http-response, pattern=^https?:\/\/api\.coolapk\.com\/v6\/(feed\/(replyList|detail)|main\/indexV8|dataList), script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true, max-size=-1, timeout=60
+deleteAeapi.js =type=http-request, pattern=^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/, script-path=https://github.com/ddgksf2013/Scripts/raw/master/deleteAeapi.js, requires-body=false, max-size=-1, timeout=60
 dict.js =type=http-response, pattern=^https?:\/\/apiproxy\.zuche\.com\/resource\/cardes\/toufang\/marketing, script-path=https://github.com/ddgksf2013/Scripts/raw/master/dict.js, requires-body=true, max-size=-1, timeout=60
 douban.js =type=http-response, pattern=^https?:\/\/m\.douban\.com\/(home_guide|movie|tv|book|group|music), script-path=https://github.com/ddgksf2013/Scripts/raw/master/douban.js, requires-body=true, max-size=-1, timeout=60
 fly.js =type=http-response, pattern=^https?:\/\/www\.flyert\.com\/source\/plugin\/mobile\/mobile\.php\?module=threadpost&.+?&page=1, script-path=https://github.com/ddgksf2013/Scripts/raw/master/fly.js, requires-body=true, max-size=-1, timeout=60
