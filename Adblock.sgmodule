@@ -2,7 +2,7 @@
 #!desc=融合版[由GithubAction自动更新]，包括墨鱼去开屏2.0、喜马拉雅、哔哩哔哩、微博、KEEP、知乎、百度网盘、高德地图、小红书、网易云、什么值得买、菜鸟、彩云天气、豆瓣网页
 #!author=ddgksf2013
 #!contributor=@blackmatrix7, @app2smile
-#!logtime=2024-10-29 09:42:07
+#!logtime=2024-10-31 09:01:38
 #!homepage=https://github.com/ddgksf2013
 #!tgchannel=https://t.me/ddgksf2021
 #!moduleurl=https://github.com/ddgksf2013/Modules/raw/main/Adblock.sgmodule
@@ -20,7 +20,7 @@
 
 [URL Rewrite]
 
-^https?:\/\/2024.10.27/c352/v2.0.540 - reject
+^https?:\/\/2024.10.30/c352/v2.0.541 - reject
 ^http:\/\/.*babytree\.com/(plough\.do|go_search\/api\/mobile_search_new\/get_multi_search_default_keywords) - reject
 ^http:\/\/ads.?s?ervice(retry)?\.(kugou|kglink).(com|cn)\/v\d\/ - reject
 ^http:\/\/app\.api\.d3yuiw4\.com\/api\/app\/ad - reject
@@ -381,6 +381,7 @@
 ^https?:\/\/m\.tuniu\.com\/api\/operation\/splash\/ - reject
 ^https?:\/\/m\.you\.163\.com\/activity\/popWindow - reject
 ^https?:\/\/magev\d\.if\.qidian\.com\/argus\/api\/v\d\/client\/getsplashscreen - reject
+^https?:\/\/maicai\.api\.ddxq\.mobi\/advert\/startUpScreen - reject
 ^https?:\/\/mama\.dxy\.com\/api\/cms\/client\/popup-window\/list - reject
 ^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/(Flash|ListFlash|GetActivityTab) - reject
 ^https?:\/\/mapi\.appvipshop\.com\/vips-mobile\/rest\/activity\/advertisement\/get - reject
