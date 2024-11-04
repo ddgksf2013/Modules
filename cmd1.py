@@ -29,7 +29,7 @@ def rewrite_to_sgmodule(js_content, project_name):
     timestamp = beijing_time.strftime("%Y-%m-%d %H:%M:%S")
     # Generate sgmodule content
     sgmodule_content = f"""#!name={project_name}
-#!desc=墨鱼去开屏2.0
+#!desc=墨鱼去开屏2.0[由GithubAction自动更新]
 #!author=ddgksf2013
 #!updatetime={timestamp}
 #!homepage=https://github.com/ddgksf2013
