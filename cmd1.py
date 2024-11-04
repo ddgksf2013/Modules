@@ -34,16 +34,7 @@ def rewrite_to_sgmodule(js_content, project_name):
 #!updatetime={timestamp}
 #!homepage=https://github.com/ddgksf2013
 #!tgchannel=https://t.me/ddgksf2021
-#!moduleurl=https://github.com/ddgksf2013/Modules/raw/main/RemoveStartUpAds.sgmodule
-
-
-
-
-[General]
-
-
-
-[Rule]
+#!moduleurl=https://github.com/ddgksf2013/Modules/raw/main/StartUpAds.sgmodule
 
 
 
@@ -132,7 +123,7 @@ def process_urls(urls, project_name):
     # Use rewrite_to_sgmodule to process the combined content
     sgmodule_content = rewrite_to_sgmodule(combined_js_content, project_name)
     if sgmodule_content:
-        output_file = 'RemoveStartUpAds.sgmodule'
+        output_file = 'StartUpAds.sgmodule'
         save_content(sgmodule_content, output_file)
         print(sgmodule_content);
         print(f"Successfully converted and saved to {output_file}")
