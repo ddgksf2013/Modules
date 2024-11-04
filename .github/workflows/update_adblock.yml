@@ -24,13 +24,17 @@ jobs:
     - name: Run Python script
       run: |
         python cmd.py
-
+        
+    - name: Run Python script
+      run: |
+        python cmd1.py
+        
     - name: Commit and push changes
       uses: EndBug/add-and-commit@v9
       with:
         author_name: 'GitHub Actions'
         author_email: 'ddgksf2013@github.com'
-        message: 'Update Adblock.sgmodule'
+        message: 'Update sgmodule'
         push: true  # Ensure this is set to true to enable pushing
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
