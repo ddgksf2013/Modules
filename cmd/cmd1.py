@@ -133,9 +133,9 @@ def process_urls(urls, project_name):
 if __name__ == "__main__":
     # Get the script directory
     current_dir = os.path.dirname(os.path.abspath(__file__))
-
+    parent_dir = os.path.dirname(current_dir)
     # Build the full path for tmp/2.txt
-    input_file_path = os.path.join(current_dir, "tmp", "2.txt")
+    input_file_path = os.path.join(parent_dir, "tmp", "2.txt")
 
     # Print the constructed path for verification
     print("Input file path:", input_file_path)
