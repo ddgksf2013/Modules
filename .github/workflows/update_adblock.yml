@@ -23,11 +23,11 @@ jobs:
 
     - name: Run Python script
       run: |
-        python cmd.py
+        python cmd/cmd.py
         
     - name: Run Python script
       run: |
-        python cmd1.py
+        python cmd/cmd1.py
         
     - name: Commit and push changes
       uses: EndBug/add-and-commit@v9
