@@ -2,7 +2,7 @@
 #!desc=融合版[由GithubAction自动更新]，包括墨鱼去开屏2.0、喜马拉雅、哔哩哔哩、微博、KEEP、知乎、百度网盘、高德地图、小红书、网易云、什么值得买、菜鸟、彩云天气、豆瓣网页
 #!author=ddgksf2013
 #!contributor=@blackmatrix7, @app2smile
-#!logtime=2025-01-06 09:16:40
+#!logtime=2025-01-11 09:13:57
 #!homepage=https://github.com/ddgksf2013
 #!tgchannel=https://t.me/ddgksf2021
 #!moduleurl=https://github.com/ddgksf2013/Modules/raw/main/Adblock.sgmodule
@@ -20,7 +20,7 @@
 
 [URL Rewrite]
 
-^https?:\/\/2025.01.04/c364/v2.0.563 - reject
+^https?:\/\/2025.01.09/c364/v2.0.564 - reject
 ^http:\/\/.*babytree\.com/(plough\.do|go_search\/api\/mobile_search_new\/get_multi_search_default_keywords) - reject
 ^http:\/\/ads.?s?ervice(retry)?\.(kugou|kglink).(com|cn)\/v\d\/ - reject
 ^http:\/\/app\.api\.d3yuiw4\.com\/api\/app\/ad - reject
@@ -162,7 +162,6 @@
 ^https?:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash - reject
 ^https?:\/\/api\.00bang\.cn\/llb\/baseinfo\/advertise\/getAdvertiseByPageCode - reject
 ^https?:\/\/api\.21ec74\.com\/v2\.5\/ad - reject
-^https?:\/\/api\.369cx\.cn\/v\d\/Splash\/GetSplashAd - reject
 ^https?:\/\/api\.ahmobile\.cn:443\/eip\?eip_serv_id=app\.getAllNew - reject
 ^https?:\/\/api\.bilibili\.com\/pgc\/activity\/deliver\/material\/receive - reject
 ^https?:\/\/api\.bilibili\.com\/pgc\/season\/player\/ogv\/cards - reject
@@ -647,6 +646,7 @@ deleteAeapi.js =type=http-request, pattern=^https?:\/\/interface(\d)?\.music\.16
 deleteAeapi.js =type=http-request, pattern=^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/vip\/cashier\/tspopup\/get, script-path=https://github.com/ddgksf2013/Scripts/raw/master/deleteAeapi.js, requires-body=false, max-size=-1, timeout=60
 deleteAeapi.js =type=http-request, pattern=^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/vipnewcenter\/app\/resource\/newaccountpage, script-path=https://github.com/ddgksf2013/Scripts/raw/master/deleteAeapi.js, requires-body=false, max-size=-1, timeout=60
 deleteAeapi.js =type=http-request, pattern=^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/yunbei\/account\/entrance\/get, script-path=https://github.com/ddgksf2013/Scripts/raw/master/deleteAeapi.js, requires-body=false, max-size=-1, timeout=60
+dict.js =type=http-response, pattern=^https?:\/\/api\.369cx\.cn\/v\d\/Splash\/GetSplashAd, script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/dict.js, requires-body=true, max-size=-1, timeout=60
 dict.js =type=http-response, pattern=^https?:\/\/apiproxy\.zuche\.com\/resource\/cardes\/toufang\/marketing, script-path=https://github.com/ddgksf2013/Scripts/raw/master/dict.js, requires-body=true, max-size=-1, timeout=60
 douban.js =type=http-response, pattern=^https?:\/\/m\.douban\.com\/(home_guide|movie|tv|book|group|music), script-path=https://github.com/ddgksf2013/Scripts/raw/master/douban.js, requires-body=true, max-size=-1, timeout=60
 fly.js =type=http-response, pattern=^https?:\/\/.*flyert.*\/source\/plugin\/mobile\/mobile\.php\?module=threadpost&.+?&page=1, script-path=https://github.com/ddgksf2013/Scripts/raw/master/fly.js, requires-body=true, max-size=-1, timeout=60

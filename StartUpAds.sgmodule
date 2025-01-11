@@ -1,7 +1,7 @@
 #!name=墨鱼去开屏模块
 #!desc=墨鱼去开屏2.0[由GithubAction自动更新]
 #!author=ddgksf2013
-#!updatetime=2025-01-06 09:16:41
+#!updatetime=2025-01-11 09:13:57
 #!homepage=https://github.com/ddgksf2013
 #!tgchannel=https://t.me/ddgksf2021
 #!moduleurl=https://github.com/ddgksf2013/Modules/raw/main/StartUpAds.sgmodule
@@ -10,7 +10,7 @@
 
 [URL Rewrite]
 
-^https?:\/\/2025.01.04/c364/v2.0.563 - reject
+^https?:\/\/2025.01.09/c364/v2.0.564 - reject
 ^http:\/\/.*babytree\.com/(plough\.do|go_search\/api\/mobile_search_new\/get_multi_search_default_keywords) - reject
 ^http:\/\/ads.?s?ervice(retry)?\.(kugou|kglink).(com|cn)\/v\d\/ - reject
 ^http:\/\/app\.api\.d3yuiw4\.com\/api\/app\/ad - reject
@@ -113,7 +113,6 @@
 ^https?:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash - reject
 ^https?:\/\/api\.00bang\.cn\/llb\/baseinfo\/advertise\/getAdvertiseByPageCode - reject
 ^https?:\/\/api\.21ec74\.com\/v2\.5\/ad - reject
-^https?:\/\/api\.369cx\.cn\/v\d\/Splash\/GetSplashAd - reject
 ^https?:\/\/api\.ahmobile\.cn:443\/eip\?eip_serv_id=app\.getAllNew - reject
 ^https?:\/\/api\.caijingmobile\.com\/(ad|advert)\/ - reject
 ^https?:\/\/api\.cloud\.189\.cn\/guns\/getOpenscreenBanners - reject
@@ -432,6 +431,7 @@ baishitv.js =type=http-response, pattern=^https?:\/\/bp-api\.bestv\.com\.cn\/cms
 caixinads.js =type=http-response, pattern=^https?:\/\/gg\.caixin\.com\/s\?z=caixin&op=1&c=3362, script-path=https://github.com/ddgksf2013/Scripts/raw/master/caixinads.js, requires-body=true, max-size=-1, timeout=60
 coolapk.js =type=http-response, pattern=^https?:\/\/api.coolapk.com\/v6\/main\/init, script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true, max-size=-1, timeout=60
 coolapk.js =type=http-response, pattern=^https?:\/\/api\.coolapk\.com\/v6\/(feed\/(replyList|detail)|main\/indexV8|dataList), script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true, max-size=-1, timeout=60
+dict.js =type=http-response, pattern=^https?:\/\/api\.369cx\.cn\/v\d\/Splash\/GetSplashAd, script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/dict.js, requires-body=true, max-size=-1, timeout=60
 dict.js =type=http-response, pattern=^https?:\/\/apiproxy\.zuche\.com\/resource\/cardes\/toufang\/marketing, script-path=https://github.com/ddgksf2013/Scripts/raw/master/dict.js, requires-body=true, max-size=-1, timeout=60
 fly.js =type=http-response, pattern=^https?:\/\/.*flyert.*\/source\/plugin\/mobile\/mobile\.php\?module=threadpost&.+?&page=1, script-path=https://github.com/ddgksf2013/Scripts/raw/master/fly.js, requires-body=true, max-size=-1, timeout=60
 hanglvzongheng.js =type=http-response, pattern=^https?:\/\/.*umetrip\.com\.cn\/gateway\/api\/umetrip\/native$, script-path=https://github.com/ddgksf2013/Scripts/raw/master/hanglvzongheng.js, requires-body=true, max-size=-1, timeout=60
