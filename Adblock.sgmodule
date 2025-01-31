@@ -2,7 +2,7 @@
 #!desc=融合版[由GithubAction自动更新]，包括墨鱼去开屏2.0、喜马拉雅、哔哩哔哩、微博、KEEP、知乎、百度网盘、高德地图、小红书、网易云、什么值得买、菜鸟、彩云天气、豆瓣网页
 #!author=ddgksf2013
 #!contributor=@blackmatrix7, @app2smile
-#!logtime=2025-01-26 09:13:54
+#!logtime=2025-01-31 09:11:54
 #!homepage=https://github.com/ddgksf2013
 #!tgchannel=https://t.me/ddgksf2021
 #!moduleurl=https://github.com/ddgksf2013/Modules/raw/main/Adblock.sgmodule
@@ -215,7 +215,8 @@
 ^https?:\/\/api\.tipsoon\.com\/api\/v\d\/top\/ad - reject
 ^https?:\/\/api\.touker\.com\/v2\/IAdvertisementAPI\.queryStartAdvertisement - reject
 ^https?:\/\/api\.vistopia\.com\.cn\/api\/v\d\/home\/advertisement - reject
-^https?:\/\/api\.weibo\.cn\/!\/was\/finder\/searchbarchange - reject
+^https?:\/\/api\.weibo\.cn\/.*\/media_homelist - reject
+^https?:\/\/api\.weibo\.cn\/.*finder\/searchbarchange - reject
 ^https?:\/\/api\.weibo\.cn\/\d\/!\/huati\/discovery_home_bottom_getdotinfo - reject
 ^https?:\/\/api\.weibo\.cn\/\d\/ad\/preload - reject
 ^https?:\/\/api\.weibo\.cn\/\d\/cardlist\?v_f=.*Weibo_intl - reject
