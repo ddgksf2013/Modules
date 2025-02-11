@@ -101,7 +101,7 @@ def rewrite_to_sgmodule(js_content, project_name):
     mitm_match_content = ','.join(match.group(1).strip() for match in re.finditer(mitm_local_pattern, js_content, re.MULTILINE))
     unique_content = ','.join(sorted(set(mitm_match_content.split(','))))
     exclude_content = ['api-sams.walmartmobile.cn']
-    filtered_content = ','.join([item for item in unique_content.split(',') if item not in exclude_content])
+    filtered_content = ','.join([item.strip() for item in unique_content.split(',') if item.strip() not in exclude_content])
     mitm_match_content = filtered_content
     
     sgmodule_content += f"""
