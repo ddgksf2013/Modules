@@ -306,8 +306,6 @@ https://fbchina.flipchina.cn/v2/ad/query/* - reject
 ^https?:\/\/yunbusiness\.ccb\.com\/clp_service\/txCtrl\?txcode=A3341A00(2|9) - reject
 # > jimi
 ^https?:\/\/superapp\.xgimi\.com\/api/v1\/app\/ad\/configs\?_sort=createdAt:Adesc - reject
-# > jike
-;^https?:\/\/mgw\.mpaas\.cn-hangzhou\.aliyuncs\.com\/mgw\.htm - reject
 # > jiansheyinhang
 ^https?:\/\/adv\.ccb\.com\/ebda\/ctm_adv - reject
 # > jump
@@ -610,9 +608,7 @@ https://support.you.163.com/appversync/check.do - reject
 ^https?:\/\/support\.you\.163\.com\/xhr\/boot\/getBootMedia\.json - reject
 
 ^https?:\/\/m\.you\.163\.com\/activity\/popWindow - reject
-
-; - reject
-
+; ^https?:\/\/yanxuan.nosdn.127.net\/(static-union\/)?.*\.gif url reject-200
 ^https?:\/\/yanxuan\.nosdn\.127\.net\/.*\.mp4 - reject
 # > weixindaihuo
 ^https?:\/\/mp\.weixin\.qq\.com\/mp\/cps_product_info - reject
@@ -847,8 +843,6 @@ baishitv = type=http-response,pattern=^https?:\/\/bp-api\.bestv\.com\.cn\/cms\/a
 # > caixin
 caixinads = type=http-response,pattern=^https?:\/\/gg\.caixin\.com\/s\?z=caixin&op=1&c=3362,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/caixinads.js
 
-BahamutAnimeAds = type=http-response,pattern=;^https:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v\d\/(token|m3u8).php\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Bahamut/BahamutAnimeAds.js
-
 fly = type=http-response,pattern=^https?:\/\/.*flyert.*\/source\/plugin\/mobile\/mobile\.php\?module=threadpost&.+?&page=1,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/fly.js
 # > iQiYi
 iqiyi_open_ads = type=http-response,pattern=^https?:\/\/.*cupid\.iqiyi\.com\/mixer\?,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/iqiyi_open_ads.js
@@ -868,8 +862,6 @@ quark = type=http-response,pattern=^https?:\/\/open-cms-api\.(uc|quark)\.cn\/ope
 pupumarket = type=http-response,pattern=^https?:\/\/j1\.pupuapi\.com\/client\/marketing\/banner\/v\d\?position,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/pupumarket.js
 # > qidianyuedu
 qidian = type=http-response,pattern=^https?:\/\/apps\.teamair\.cn\/app\/version,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/qidian.js
-# > spotify pro
-spotify-proto = type=http-response,pattern=;^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js
 
 shunfeng_json = type=http-response,pattern=https://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryInfoFlow,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/shunfeng_json.js
 # > Stay
