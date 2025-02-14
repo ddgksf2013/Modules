@@ -2,7 +2,7 @@ name: Convert QX to Surge
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # 每天运行
+    - cron: '0 0 */2 * *'  # 每天运行
   workflow_dispatch:  # 允许手动触发
 
 jobs:
