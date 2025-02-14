@@ -6,6 +6,54 @@ import os
 CONFIG = {
     "conversions": [
         {
+            "input_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Amap.conf",
+            "output_file": "Adblock/AmapAds.sgmodule",
+            "name": "Amap AdBlock for Surge",
+            "desc": "Converted from QX Amap AdBlock Rules"
+        },
+        {
+            "input_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Bilibili.conf",
+            "output_file": "Adblock/BilibiliAds.sgmodule",
+            "name": "Bilibili AdBlock for Surge",
+            "desc": "Converted from QX Bilibili AdBlock Rules"
+        },
+        {
+            "input_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/CaiYunAds.conf",
+            "output_file": "Adblock/CaiYunAds.sgmodule",
+            "name": "CaiYun AdBlock for Surge",
+            "desc": "Converted from QX CaiYun AdBlock Rules"
+        },
+        {
+            "input_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Cainiao.conf",
+            "output_file": "Adblock/CainiaoAds.sgmodule",
+            "name": "Cainiao AdBlock for Surge",
+            "desc": "Converted from QX Cainiao AdBlock Rules"
+        },
+        {
+            "input_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/NeteaseAds.conf",
+            "output_file": "Adblock/NeteaseAds.sgmodule",
+            "name": "Netease AdBlock for Surge",
+            "desc": "Converted from QX Netease AdBlock Rules"
+        },
+        {
+            "input_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/SmzdmAds.conf",
+            "output_file": "Adblock/SmzdmAds.sgmodule",
+            "name": "Smzdm AdBlock for Surge",
+            "desc": "Converted from QX Smzdm AdBlock Rules"
+        },
+        {
+            "input_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/StartUp.conf",
+            "output_file": "Adblock/StartUpAds.sgmodule",
+            "name": "StartUp AdBlock for Surge",
+            "desc": "Converted from QX StartUp AdBlock Rules"
+        },
+        {
+            "input_url": "https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/XiaoHongShu.conf",
+            "output_file": "Adblock/XiaoHongShuAds.sgmodule",
+            "name": "XiaoHongShu AdBlock for Surge",
+            "desc": "Converted from QX XiaoHongShu AdBlock Rules"
+        },
+        {
             "input_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Weibo.conf",
             "output_file": "Adblock/WeiboAds.sgmodule",
             "name": "Weibo AdBlock for Surge",
