@@ -1,0 +1,37 @@
+name: Convert QX to Surge
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # 每天运行
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+    - name: Run conversion script
+      run: python convert.py
+    - name: Check generated file
+      run: |
+        echo "File content:"
+        cat *.sgmodule
+        echo "File stats:"
+        ls -l *.sgmodule
+        echo "Git status:"
+        git status
+    - name: Commit and push if changed
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add *.sgmodule
+        git commit -m "Auto convert AdBlock to Surge module" -a || echo "No changes to commit"
+        git push
