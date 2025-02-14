@@ -98,7 +98,12 @@ def convert_to_surge(qx_content, name, desc, input_url):
             # 保存注释，但不立即添加到任何部分
             last_comment = stripped_line
             continue
-        
+            
+        if stripped_line.startswith(';'):
+            # 保存注释，但不立即添加到任何部分
+            last_comment = stripped_line
+            continue
+            
         if "reject" in stripped_line:
             parts = stripped_line.split()
             if len(parts) >= 2:
