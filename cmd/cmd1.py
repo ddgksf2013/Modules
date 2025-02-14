@@ -12,6 +12,12 @@ CONFIG = {
             "desc": "Converted from QX Amap AdBlock Rules"
         },
         {
+            "input_url": "https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js",
+            "output_file": "Adblock/ZhihuAds.sgmodule",
+            "name": "Zhihu AdBlock for Surge",
+            "desc": "Converted from QX Zhihu AdBlock Rules"
+        },
+        {
             "input_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Bilibili.conf",
             "output_file": "Adblock/BilibiliAds.sgmodule",
             "name": "Bilibili AdBlock for Surge",
