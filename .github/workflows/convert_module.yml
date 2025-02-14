@@ -19,7 +19,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests
     - name: Run conversion script
-      run: python convert.py
+      run: python cmd/cmd1.py
     - name: Check generated file
       run: |
         echo "File content:"
