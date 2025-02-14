@@ -1,157 +1,109 @@
-import os
+# author @realyn
 import requests
-import re
-import time
-import datetime
+import os
 
-def download_content(url):
-    try:
-        response = requests.get(url)
-        response.raise_for_status()  # Ensure request was successful
-        return response.text
-    except requests.RequestException as e:
-        print(f"Error downloading content from {url}: {e}")
-        return None
+# 配置直接在脚本中定义
+CONFIG = {
+    "conversions": [
+        {
+            "input_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Weibo.conf",
+            "output_file": "Adblock/WeiboAds.sgmodule",
+            "name": "Weibo AdBlock for Surge",
+            "desc": "Converted from QX Weibo AdBlock Rules"
+        },
+        {
+            "input_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Ximalaya.conf",
+            "output_file": "Adblock/XimalayaAds.sgmodule",
+            "name": "Ximalaya AdBlock for Surge",
+            "desc": "Converted from QX Ximalaya AdBlock Rules"
+        }
+    ]
+}
 
-def save_content(content, file_path):
-    try:
-        with open(file_path, 'w', encoding='utf-8') as f:
-            f.write(content)
-    except IOError as e:
-        print(f"Error saving content to {file_path}: {e}")
-
-def rewrite_to_sgmodule(js_content, project_name):
-    # Check for the presence of the hostname section
-    if not re.search(r'hostname', js_content, re.IGNORECASE):
-        return None
-    utc_time = datetime.datetime.utcnow()
-    beijing_time = utc_time + datetime.timedelta(hours=8)
-    timestamp = beijing_time.strftime("%Y-%m-%d %H:%M:%S")
-    # Generate sgmodule content
-    sgmodule_content = f"""#!name={project_name}
-#!desc=墨鱼去开屏2.0[由GithubAction自动更新]
-#!author=ddgksf2013
-#!updatetime={timestamp}
-#!homepage=https://github.com/ddgksf2013
-#!tgchannel=https://t.me/ddgksf2021
-#!moduleurl=https://github.com/ddgksf2013/Modules/raw/main/StartUpAds.sgmodule
-
-
-
-[URL Rewrite]
-
-"""
+def convert_to_surge(qx_content, name, desc, input_url):
+    surge_content = f"#!name={name}\n"
+    surge_content += f"#!desc={desc}\n"
+    surge_content += f"#!author=ddgksf2013\n"
+    surge_content += f"#!tgchannel=https://t.me/ddgksf2021\n"
+    surge_content += f"# Surge Module Source: https://github.com/ddgksf2013/Modules\n"
+    surge_content += f"# Original QX Config Source: {input_url}\n\n"
     
-    # Regex patterns
-    rewrite_local_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(reject|reject-200|reject-img|reject-dict|reject-array)'
-    script_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(script-response-body|script-request-body|script-echo-response|script-request-header|script-response-header|script-analyze-echo-response)\s+(\S+)'
-    body_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(response-body)\s+(\S+)\s+(response-body)\s+(\S+)'
-    echo_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(echo-response)\s+(\S+)\s+(echo-response)\s+(\S+)'
-    mitm_local_pattern = r'^\s*hostname\s*=\s*([^\n#]*)\s*(?=#|$)'
-
-    # Process URL rewrite rules
-    url_content = "";
-    for match in re.finditer(rewrite_local_pattern, js_content, re.MULTILINE):
-        pattern = match.group(1).strip()
-        url_content += f"{pattern} - reject\n"
-    url_lines = url_content.splitlines()
-    unique_lines = [url_lines[0]] + sorted(set(url_lines[1:]))
-    url_content = '\n'.join(unique_lines)
-    sgmodule_content += url_content
-    sgmodule_content += f"""
-
-[Map Local]
-
-"""
-    for match in re.finditer(echo_pattern, js_content, re.MULTILINE):
-        pattern = match.group(1).strip()
-        re1 = match.group(3).strip()
-        re2 = match.group(5).strip()
-        if re1 == "text/html":
-            sgmodule_content += f'{pattern} data="{re2}" header="Content-Type: text/html"\n'
-        else:
-            sgmodule_content += f'{pattern} data="{re2}" header="Content-Type: text/json"\n'
-    sgmodule_content += f"""
-[Script]
-
-"""
-    # Process script rules
-    script_content = ""
-    for match in re.finditer(script_pattern, js_content, re.MULTILINE):
-        pattern = match.group(1).strip()
-        script_type_raw = match.group(2)
-        script_path = match.group(3).strip()
-        filename = re.search(r'/([^/]+)$', script_path).group(1)
+    sections = {
+        "URL Rewrite": [],
+        "Map Local": [],
+        "Script": [],
+        "MITM": []
+    }
+    
+    current_section = None
+    
+    for line in qx_content.split('\n'):
+        stripped_line = line.strip()
+        if not stripped_line:
+            continue
         
-        script_type = 'response' if script_type_raw in ['script-response-body', 'script-echo-response', 'script-response-header'] else 'request'
-        needbody = "true" if script_type_raw in ['script-response-body', 'script-echo-response', 'script-response-header', 'script-request-body', 'script-analyze-echo-response'] else "false"
+        if stripped_line.startswith('hostname = '):
+            sections["MITM"].append(stripped_line.replace("hostname = ", "hostname = %APPEND% "))
+            continue
         
-        script_content += f"{filename} =type=http-{script_type}, pattern={pattern}, script-path={script_path}, requires-body={needbody}, max-size=-1, timeout=60\n"
+        if stripped_line.startswith('#'):
+            # 保存注释，但不立即添加到任何部分
+            last_comment = stripped_line
+            continue
+        
+        if "reject" in stripped_line:
+            parts = stripped_line.split()
+            if len(parts) >= 2:
+                sections["URL Rewrite"].extend([last_comment, f"{parts[0]} - reject"])
+        elif "data=" in stripped_line:
+            sections["Map Local"].extend([last_comment, stripped_line])
+        elif "script-response-body" in stripped_line or "script-request-body" in stripped_line:
+            parts = stripped_line.split()
+            if len(parts) >= 4:
+                script_type = "http-response" if "script-response-body" in stripped_line else "http-request"
+                pattern = parts[0]
+                script_path = parts[-1]
+                script_name = os.path.basename(script_path).split('.')[0]
+                sections["Script"].extend([last_comment, f"{script_name} = type={script_type},pattern={pattern},requires-body=1,max-size=0,script-path={script_path}"])
+        
+        last_comment = ""  # 重置注释，因为它已经被使用了
     
-    script_content= '\n'.join(sorted(set(script_content.splitlines())))
-    sgmodule_content +=script_content
+    for section, content in sections.items():
+        if content:
+            surge_content += f"[{section}]\n" + "\n".join(content) + "\n\n"
     
-    for match in re.finditer(body_pattern, js_content, re.MULTILINE):
-        pattern = match.group(1).strip()
-        re1 = match.group(3).strip()
-        re2 = match.group(5).strip()
-        sgmodule_content += f"replace-body.js =type=http-response, pattern={pattern}, script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=true, argument={re1}->{re2},max-size=-1, timeout=60\n"
+    return surge_content
 
-    # Process MITM
-    mitm_match_content = ','.join(match.group(1).strip() for match in re.finditer(mitm_local_pattern, js_content, re.MULTILINE))
-    unique_content = ','.join(sorted(set(mitm_match_content.split(','))))
-    exclude_content = ['api-sams.walmartmobile.cn']
-    filtered_content = ','.join([item.strip() for item in unique_content.split(',') if item.strip() not in exclude_content])
-    mitm_match_content = filtered_content
+def process_file(input_url, output_file, name, desc):
+    print(f"Fetching QX content from URL: {input_url}")
+    response = requests.get(input_url)
+    qx_content = response.text
+
+    print(f"Fetched QX content (first 500 characters):\n{qx_content[:500]}...")
+    print(f"Total length of fetched content: {len(qx_content)} characters")
+
+    print("Starting conversion to Surge format...")
+    surge_content = convert_to_surge(qx_content, name, desc, input_url)
+
+    print(f"Generated Surge content (first 500 characters):\n{surge_content[:500]}...")
+    print(f"Total length of generated Surge content: {len(surge_content)} characters")
+
+    print(f"Attempting to write content to file: {output_file}")
+    try:
+        with open(output_file, 'w', encoding='utf-8') as f:
+            f.write(surge_content)
+        print(f"Successfully wrote to {output_file}")
+        print(f"File size: {os.path.getsize(output_file)} bytes")
+    except Exception as e:
+        print(f"Error handling file: {e}")
     
-    sgmodule_content += f"""
+    # 添加调试信息
+    print(f"Current working directory: {os.getcwd()}")
+    print(f"Files in current directory: {os.listdir()}")
 
-[MITM]
-
-hostname = %APPEND% {mitm_match_content}
-"""
-    return sgmodule_content
-
-def process_urls(urls, project_name):
-    combined_js_content = ""
-    
-    for url in urls:
-        js_content = download_content(url)
-        if js_content:
-            combined_js_content += js_content + "\n"  # Combine content from each URL
-        else:
-            print(f"Failed to download or process the content from {url}.")
-
-    # Use rewrite_to_sgmodule to process the combined content
-    sgmodule_content = rewrite_to_sgmodule(combined_js_content, project_name)
-    if sgmodule_content:
-        output_file = 'StartUpAds.sgmodule'
-        save_content(sgmodule_content, output_file)
-        print(sgmodule_content);
-        print(f"Successfully converted and saved to {output_file}")
-    else:
-        print("Combined content does not meet the requirements for conversion.")
+def main():
+    for conversion in CONFIG['conversions']:
+        process_file(conversion['input_url'], conversion['output_file'], conversion['name'], conversion['desc'])
 
 if __name__ == "__main__":
-    # Get the script directory
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    parent_dir = os.path.dirname(current_dir)
-    # Build the full path for tmp/2.txt
-    input_file_path = os.path.join(parent_dir, "tmp", "2.txt")
-
-    # Print the constructed path for verification
-    print("Input file path:", input_file_path)
-
-    # Read file content
-    try:
-        with open(input_file_path, 'r') as file:
-            urls = file.readlines()
-    except IOError as e:
-        print(f"Error reading the input file: {e}")
-        exit(1)
-
-    # Define project name (customize as needed)
-    project_name = "墨鱼去开屏模块"
-
-    # Process the URLs
-    process_urls([url.strip() for url in urls if url.strip()], project_name)
+    main()
