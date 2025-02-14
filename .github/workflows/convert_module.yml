@@ -20,18 +20,19 @@ jobs:
         pip install requests
     - name: Run conversion script
       run: python cmd/cmd1.py
-    - name: Check generated file
+    - name: Check generated files in Adblock directory
       run: |
-        echo "File content:"
-        cat *.sgmodule
-        echo "File stats:"
-        ls -l *.sgmodule
-        echo "Git status:"
-        git status
+        echo "Checking files in Adblock directory:"
+        ls -l Adblock/  # 查看 Adblock 目录下的文件
+        echo "Files with .sgmodule extension in Adblock directory:"
+        ls -l Adblock/*.sgmodule  # 查看 Adblock 目录下是否生成了 .sgmodule 文件
+    - name: Check if Adblock folder is tracked
+      run: |
+        git ls-files | grep 'Adblock/'  # 检查 Adblock 文件夹是否被 Git 跟踪
     - name: Commit and push if changed
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        git add *.sgmodule
+        git add Adblock/*.sgmodule  # 只添加 Adblock 目录下的 .sgmodule 文件
         git commit -m "Auto convert AdBlock to Surge module" -a || echo "No changes to commit"
-        git push
+        git push || echo "Push failed"
