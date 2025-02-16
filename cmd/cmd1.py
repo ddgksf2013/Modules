@@ -2,7 +2,6 @@
 import requests
 import os
 
-# 配置直接在脚本中定义
 CONFIG = {
     "conversions": [
         {
@@ -90,42 +89,55 @@ def convert_to_surge(qx_content, name, desc, input_url):
     }
     
     current_section = None
-    
+    last_comment = ""  
     for line in qx_content.split('\n'):
         stripped_line = line.strip()
         if not stripped_line:
-            continue
+            continue  
         
+
         if stripped_line.startswith('hostname = '):
             sections["MITM"].append(stripped_line.replace("hostname = ", "hostname = %APPEND% "))
             continue
         
-        if stripped_line.startswith('#'):
-            # 保存注释，但不立即添加到任何部分
+
+        if stripped_line.startswith('#') or stripped_line.startswith(';'):
             last_comment = stripped_line
             continue
-            
-        if stripped_line.startswith(';'):
-            # 保存注释，但不立即添加到任何部分
-            last_comment = stripped_line
-            continue
-            
+        
         if "reject" in stripped_line:
             parts = stripped_line.split()
             if len(parts) >= 2:
-                sections["URL Rewrite"].extend([last_comment, f"{parts[0]} - reject"])
+                if last_comment:  
+                    sections["URL Rewrite"].extend([last_comment, f"{parts[0]} - reject"])
+                else:
+                    sections["URL Rewrite"].append(f"{parts[0]} - reject")
+        
+
         elif "data=" in stripped_line:
-            sections["Map Local"].extend([last_comment, stripped_line])
-        elif "script-response-body" in stripped_line or "script-request-body" in stripped_line:
+            if last_comment:  
+                sections["Map Local"].extend([last_comment, stripped_line])
+            else:
+                sections["Map Local"].append(stripped_line)
+        
+        elif "script-response-body" in stripped_line or "script-request" in stripped_line:
             parts = stripped_line.split()
             if len(parts) >= 4:
                 script_type = "http-response" if "script-response-body" in stripped_line else "http-request"
                 pattern = parts[0]
                 script_path = parts[-1]
                 script_name = os.path.basename(script_path).split('.')[0]
-                sections["Script"].extend([last_comment, f"{script_name} = type={script_type},pattern={pattern},requires-body=1,max-size=0,script-path={script_path}"])
+                
+                script_line = f"{script_name} = type={script_type},pattern={pattern},max-size=0,script-path={script_path}"
+                if script_type == "http-response":
+                    script_line = f"{script_name} = type={script_type},pattern={pattern},requires-body=1,max-size=0,script-path={script_path}"
+                
+                if last_comment:
+                    sections["Script"].extend([last_comment, script_line])
+                else:
+                    sections["Script"].append(script_line)
         
-        last_comment = ""  # 重置注释，因为它已经被使用了
+        last_comment = ""  
     
     for section, content in sections.items():
         if content:
