@@ -1,4 +1,4 @@
-#!name=Bilibili AdBlock for Surge
+#!name=Bilibili AdBlock
 #!desc=Converted from QX Bilibili AdBlock Rules
 #!author=ddgksf2013
 #!tgchannel=https://t.me/ddgksf2021
@@ -6,7 +6,6 @@
 # Original QX Config Source: https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Bilibili.conf
 
 [URL Rewrite]
-
 //2022-03-13 - reject
 # ～ BiliBili_哔哩哔哩_屏蔽广告浮窗@ddgksf2013
 ^https?:\/\/api\.bilibili\.com\/pgc\/activity\/deliver\/material\/receive - reject

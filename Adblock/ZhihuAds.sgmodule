@@ -1,4 +1,4 @@
-#!name=Zhihu AdBlock for Surge
+#!name=Zhihu AdBlock
 #!desc=Converted from QX Zhihu AdBlock Rules
 #!author=ddgksf2013
 #!tgchannel=https://t.me/ddgksf2021
@@ -8,15 +8,12 @@
 [URL Rewrite]
 # > 知乎_拦截DNS解析@blackmatrix7
 ^https?:\/\/118\.89\.204\.198 - reject
-
 ^https?:\/\/103\.41\.167\.237 - reject
-
 ^https?:\/\/2402:4e00:1200:ed00:0:9089:6dac:96b6 - reject
 # > 知乎_屏蔽远程配置@blackmatrix7
 ^https?:\/\/api\.zhihu\.com\/ab\/api\/v1\/products\/zhihu\/platforms\/ios\/config - reject
 # > 知乎_品牌提问广告@blackmatrix7
 ^https?:\/\/api\.zhihu\.com\/brand\/question\/\d+/card\? - reject
-
 ^https?:\/\/www\.zhihu\.com\/api\/v\d+\/brand\/question/\d+/card\? - reject
 # > 知乎_去除底部标签页关注人角标@blackmatrix7
 ^https?:\/\/api\.zhihu\.com\/moments\/tab_v2 - reject
@@ -38,7 +35,6 @@
 ^https?:\/\/api\.zhihu\.com\/feed\/render\/revisit\/tag_config - reject
 # > 知乎_暂不清楚作用@blackmatrix7
 ^https?:\/\/api\.zhihu\.com\/commercial_api - reject
-
 ^https?:\/\/api\.zhihu\.com\/ad-style-service\/request - reject
 # > 知乎_文章页去除底部广告@blackmatrix7
 ^https?:\/\/www\.zhihu\.com\/api\/v\d\/articles\/\d+\/recommendation - reject
@@ -78,7 +74,6 @@ Zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/v2\/topstory\/ho
 Zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/header,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
 # > 知乎_回答信息流去广告@ddgksf2013
 Zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/next-data,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
-
 Zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/next-render,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
 # > 知乎_问题回答列表@ddgksf2013
 Zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/(v4\/)?questions\/\d+\/feeds,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js

@@ -1,4 +1,4 @@
-#!name=Smzdm AdBlock for Surge
+#!name=Smzdm AdBlock
 #!desc=Converted from QX Smzdm AdBlock Rules
 #!author=ddgksf2013
 #!tgchannel=https://t.me/ddgksf2021
@@ -18,7 +18,6 @@
 smzdm_json = type=http-response,pattern=^https?:\/\/s-api.smzdm\.com\/sou\/search_default_keyword,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/smzdm_json.js
 # > 开屏去广告@blackmatrix7@ddgksf2013
 smzdm_json = type=http-response,pattern=^https?:\/\/app-api\.smzdm\.com\/util\/loading,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/smzdm_json.js
-
 smzdm_json = type=http-response,pattern=^https?:\/\/.*zdmimg\.com\/cpm\/api\/v\d\/advert_distribution\/get_all_advertise,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/smzdm_json.js
 # > 首页去广告@blackmatrix7@ddgksf2013
 smzdm_json = type=http-response,pattern=^https?:\/\/homepage-api\.smzdm\.com\/v3\/home,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/smzdm_json.js
