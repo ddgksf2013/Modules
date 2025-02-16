@@ -128,7 +128,7 @@ def convert_to_surge(qx_content, name, desc, input_url):
                 script_path = parts[-1]
                 script_name = os.path.basename(script_path).split('.')[0]
                 
-                script_line = f"{script_name} = type={script_type},pattern={pattern},max-size=0,script-path={script_path}"
+                script_line = f"{script_name} = type={script_type},pattern={pattern},script-path={script_path}"
                 if script_type == "http-response":
                     script_line = f"{script_name} = type={script_type},pattern={pattern},requires-body=1,max-size=0,script-path={script_path}"
                 
