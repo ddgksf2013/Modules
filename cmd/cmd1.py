@@ -120,11 +120,11 @@ def convert_to_surge(qx_content, name, desc, input_url):
                     sections["URL Rewrite"].append(f"{parts[0]} - reject")
         
 
-        elif "data=" in stripped_line:
-            if last_comment:  
-                sections["Map Local"].extend([last_comment, stripped_line])
-            else:
-                sections["Map Local"].append(stripped_line)
+        #elif "data=" in stripped_line:
+            #if last_comment:  
+            #    sections["Map Local"].extend([last_comment, stripped_line])
+            #else:
+            #    sections["Map Local"].append(stripped_line)
         
         elif "script-response-body" in stripped_line or "script-request" in stripped_line:
             parts = stripped_line.split()
