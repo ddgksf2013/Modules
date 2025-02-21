@@ -9,10 +9,10 @@
 [rewrite_local]
 
 # > GoodNotes@ddgksf2013
-RevenueCatVip = type=http-response, pattern=^https:\/\/isi\.csan\.goodnotesapp\.com\.cn\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://gist.githubusercontent.com/ddgksf2013/980624ef4722ee4ca805a74dc61ca9a3/raw/GoodNotes.Vip.js, requires-body=true, max-size=-1, timeout=60
-RevenueCatDeleteHeader = type=http-request, pattern=^https:\/\/isi\.csan\.goodnotesapp\.com\.cn\/.+\/(receipts|subscribers), script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/deleteHeader.js, timeout=60
+RevenueCatVip = type=http-response, pattern=^https:\/\/isi\.csan.[a-z.]+\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://gist.githubusercontent.com/ddgksf2013/980624ef4722ee4ca805a74dc61ca9a3/raw/GoodNotes.Vip.js, requires-body=true, max-size=-1, timeout=60
+RevenueCatDeleteHeader = type=http-request, pattern=^https:\/\/isi\.csan.[a-z.]+\/.+\/(receipts|subscribers), script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/deleteHeader.js, timeout=60
 
 
 [mitm]
 
-hostname=%APPEND% isi.csan.goodnotesapp.com.cn
+hostname=%APPEND% isi.csan.*
