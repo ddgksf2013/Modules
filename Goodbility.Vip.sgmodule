@@ -1,0 +1,17 @@
+#!name=GoodNotes&Notability
+#!desc=解锁永久会员 
+#!author=𝐝𝐝𝐠𝐤𝐬𝐟𝟐𝟎𝟏𝟑
+#!tgchannel=https://t.me/ddgksf2021
+#!moduleUrl=https://github.com/ddgksf2013/Modules/raw/main/Goodbility.Vip.sgmodule
+#!howtouse=小火箭、Surge用户直接添加模块，QuantumultX用户添加重写时打开解析器
+
+
+[rewrite_local]
+
+GoodbilityVip = type=http-response, pattern=^https:\/\/isi\.csan.[a-z.]+\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://gist.githubusercontent.com/ddgksf2013/980624ef4722ee4ca805a74dc61ca9a3/raw/Goodbility.Vip.js, requires-body=true, max-size=-1, timeout=60
+GoodbilityVip = type=http-request,  pattern=^https:\/\/isi\.csan.[a-z.]+\/.+\/(receipts|subscribers), script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/deleteHeader.js, timeout=60
+GoodbilityVip = type=http-response, pattern=^https?:\/\/notability\.com\/global, script-path=https://gist.githubusercontent.com/ddgksf2013/980624ef4722ee4ca805a74dc61ca9a3/raw/Goodbility.Vip.js, requires-body=true, max-size=-1, timeout=60
+
+[mitm]
+
+hostname=%APPEND% isi.csan.*, notability.com
