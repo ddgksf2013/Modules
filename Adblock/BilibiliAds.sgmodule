@@ -3,7 +3,7 @@
 #!author=ddgksf2013
 #!tgchannel=https://t.me/ddgksf2021
 # Surge Module Source: https://github.com/ddgksf2013/Modules
-# Original QX Config Source: https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Bilibili.conf
+# Original QX Config Source: https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/BilibiliAds.conf
 
 [URL Rewrite]
 //2022-03-13 - reject
@@ -36,7 +36,7 @@ bilibili_json = type=http-response,pattern=^https?:\/\/app\.bilibili\.com\/x\/v2
 # ～ BiliBili_哔哩哔哩_屏蔽直播页顶部轮播图@ddgksf2013
 bilibili_json = type=http-response,pattern=^https?:\/\/api\.live\.bilibili\.com\/xlive\/app-interface\/v2\/index\/feed,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/bilibili_json.js
 # ～ BiliBili_哔哩哔哩_推荐去广告@ddgksf2013
-bilibili_json = type=http-response,pattern=^https?:\/\/app\.bilibili\.com\/x\/v2\/feed\/index,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/bilibili_json.js
+bilibili_tmp = type=http-request,pattern=^https?:\/\/app\.bilibili\.com\/x\/v2\/feed\/index,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/bilibili_tmp.js
 # ～ BiliBili_哔哩哔哩_追番去广告@ddgksf2013
 bilibili_json = type=http-response,pattern=^https?:\/\/api\.(bilibili|biliapi)\.(com|net)\/pgc\/page\/bangumi,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/bilibili_json.js
 # ～ BiliBili_哔哩哔哩_观影页面去广告@ddgksf2013
@@ -49,16 +49,16 @@ bilibili_json = type=http-response,pattern=^https?:\/\/app\.bilibili\.com\/x\/v2
 bilibili_json = type=http-response,pattern=^https?:\/\/app\.bilibili\.com\/x\/resource\/top\/activity,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/bilibili_json.js
 # ～ BiliBili_哔哩哔哩_热搜发现@ddgksf2013
 bilibili_json = type=http-response,pattern=^https://app.bilibili.com/x/v2/search/square,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/bilibili_json.js
-# ～ BiliBili_哔哩哔哩_搜索去广告@BiliUniverse
-bilibili_proto_beta = type=http-response,pattern=^https?:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll$,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/bilibili_proto_beta.js
-# ～ BiliBili_哔哩哔哩_交互点赞投票弹幕及会员弹幕@BiliUniverse
-bilibili_proto_beta = type=http-response,pattern=^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.community\.service\.dm\.v1\.DM\/(DmView|DmSegMobile),requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/bilibili_proto_beta.js
-# ～ BiliBili_哔哩哔哩_青少年弹窗@BiliUniverse
-bilibili_proto_beta = type=http-response,pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/bilibili_proto_beta.js
-# ～ BiliBili_哔哩哔哩_UP主推荐广告[适配ipad端]@BiliUniverse
-bilibili_proto_beta = type=http-response,pattern=^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.(view|viewunite)\.v1\.View\/(View|TFInfo)$,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/bilibili_proto_beta.js
-# ～ BiliBili_哔哩哔哩_动态综合页及视频页去广告@BiliUniverse
-bilibili_proto_beta = type=http-response,pattern=^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.dynamic\.v2\.Dynamic\/Dyn(All|Video)$,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/bilibili_proto_beta.js
+# ～ BiliBili_哔哩哔哩_搜索去广告@BiliUniverse,kokoryh
+bilibili = type=http-response,pattern=^https?:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/kokoryh/Sparkle/master/dist/bilibili.protobuf.js
+# ～ BiliBili_哔哩哔哩_交互点赞投票弹幕及会员弹幕@BiliUniverse,kokoryh
+bilibili = type=http-response,pattern=^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.community\.service\.dm\.v1\.DM\/(DmView|DmSegMobile),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/kokoryh/Sparkle/master/dist/bilibili.protobuf.js
+# ～ BiliBili_哔哩哔哩_青少年弹窗@BiliUniverse,kokoryh
+bilibili = type=http-response,pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/kokoryh/Sparkle/master/dist/bilibili.protobuf.js
+# ～ BiliBili_哔哩哔哩_UP主推荐广告[适配ipad端]@BiliUniverse,kokoryh
+bilibili = type=http-response,pattern=^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.(view|viewunite)\.v1\.View\/(View|TFInfo)$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/kokoryh/Sparkle/master/dist/bilibili.protobuf.js
+# ～ BiliBili_哔哩哔哩_动态综合页及视频页去广告@BiliUniverse,kokoryh
+bilibili = type=http-response,pattern=^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.dynamic\.v2\.Dynamic\/Dyn(All|Video)$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/kokoryh/Sparkle/master/dist/bilibili.protobuf.js
 
 [MITM]
 hostname = %APPEND% -broadcast.chat.bilibili.com, -cm.bilibili.com, -*cdn*.biliapi.net, -*tracker*.biliapi.net, app.bilibili.com, api.live.bilibili.com, *.bilibili.com, *.bili*.*, *.bilibili.*, grpc.biliapi.net,*biliapi.net
