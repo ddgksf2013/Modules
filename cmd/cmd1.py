@@ -17,7 +17,7 @@ CONFIG = {
             "desc": "Converted from QX Zhihu AdBlock Rules"
         },
         {
-            "input_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Bilibili.conf",
+            "input_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/BilibiliAds.conf",
             "output_file": "Adblock/BilibiliAds.sgmodule",
             "name": "Bilibili AdBlock",
             "desc": "Converted from QX Bilibili AdBlock Rules"
