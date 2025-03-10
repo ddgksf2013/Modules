@@ -2,7 +2,7 @@
 #!desc=融合版[由GithubAction自动更新]，包括墨鱼去开屏2.0、喜马拉雅、哔哩哔哩、微博、KEEP、知乎、百度网盘、高德地图、小红书、网易云、什么值得买、菜鸟、彩云天气、豆瓣网页
 #!author=ddgksf2013
 #!contributor=@blackmatrix7, @app2smile
-#!logtime=2025-03-09 22:36:20
+#!logtime=2025-03-10 19:36:13
 #!homepage=https://github.com/ddgksf2013
 #!tgchannel=https://t.me/ddgksf2021
 #!moduleurl=https://github.com/ddgksf2013/Modules/raw/main/Adblock.sgmodule
@@ -611,7 +611,6 @@ bilibili_json.js =type=http-response, pattern=^https?:\/\/app\.bilibili\.com\/x\
 bilibili_json.js =type=http-response, pattern=^https?:\/\/app\.bilibili\.com\/x\/resource\/top\/activity, script-path=https://github.com/ddgksf2013/Scripts/raw/master/bilibili_json.js, requires-body=true, max-size=-1, timeout=60
 bilibili_json.js =type=http-response, pattern=^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/mine, script-path=https://github.com/ddgksf2013/Scripts/raw/master/bilibili_json.js, requires-body=true, max-size=-1, timeout=60
 bilibili_json.js =type=http-response, pattern=^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo\?, script-path=https://github.com/ddgksf2013/Scripts/raw/master/bilibili_json.js, requires-body=true, max-size=-1, timeout=60
-bilibili_tmp.js =type=http-request, pattern=^https?:\/\/app\.bilibili\.com\/x\/v2\/feed\/index, script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/bilibili_tmp.js, requires-body=false, max-size=-1, timeout=60
 cainiao_json.js =type=http-response, pattern=^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.adkeyword, script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/cainiao_json.js, requires-body=true, max-size=-1, timeout=60
 cainiao_json.js =type=http-response, pattern=^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.app\.mine\.main\.cn, script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/cainiao_json.js, requires-body=true, max-size=-1, timeout=60
 cainiao_json.js =type=http-response, pattern=^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.index\.cn, script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/cainiao_json.js, requires-body=true, max-size=-1, timeout=60
