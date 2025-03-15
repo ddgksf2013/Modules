@@ -53,7 +53,7 @@ CONFIG = {
             "desc": "Converted from QX StartUp AdBlock Rules"
         },
         {
-            "input_url": "https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/XiaoHongShu.conf",
+            "input_url": "https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/XiaoHongShuAds.conf",
             "output_file": "Adblock/XiaoHongShuAds.sgmodule",
             "name": "XiaoHongShu AdBlock",
             "desc": "Converted from QX XiaoHongShu AdBlock Rules"
