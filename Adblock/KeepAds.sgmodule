@@ -1,0 +1,42 @@
+#!name=Keep AdBlock
+#!desc=Converted from QX Keep AdBlock Rules
+#!author=ddgksf2013
+#!tgchannel=https://t.me/ddgksf2021
+# Surge Module Source: https://github.com/ddgksf2013/Modules
+# Original QX Config Source: https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/KeepAds.conf
+
+[URL Rewrite]
+# > 屏蔽应用内弹窗
+^https?:\/\/api\.gotokeep\.com\/guide-webapp\/v\d\/popup\/getPopUp - reject
+^https?:\/\/api\.gotokeep\.com\/running\/v\d\/home\/dialog - reject
+# > 屏蔽部分启动弹窗
+^https?:\/\/api\.gotokeep\.com\/kprime\/v\d\/popups\/primeGuide - reject
+# > 屏蔽开屏广告请求
+^https?:\/\/hc-ssp\.sm\.cn - reject
+^https?:\/\/kad\.gotokeep\.com\/op-engine-webapp\/v\d\/ad - reject
+# > 屏蔽青少年弹窗
+^https?:\/\/api.gotokeep.com/cauchy/growth/init - reject
+# > 屏蔽搜索栏自动填充词
+^https?:\/\/api\.gotokeep\.com\/search\/v\d\/default\/keyword\/list - reject
+# > 屏蔽热词
+^https?:\/\/api\.gotokeep\.com\/search\/v\d\/hotword\/list - reject
+^https?:\/\/api\.gotokeep\.com\/search\/v\d\/hotHashtag\/list - reject
+# > 屏蔽hotCourse
+^https?:\/\/api\.gotokeep\.com\/search\/v\d\/hotCourse\/list - reject
+# > 屏蔽adwebapp
+^https?:\/\/api\.gotokeep\.com\/op-engine-webapp\/v\d\/ad - reject
+# > 屏蔽广告预加载
+^https?:\/\/api\.gotokeep\.com\/ads\/v\d\/ads\/preload - reject
+# > 屏蔽adbox
+^https?:\/\/api\.gotokeep\.com\/training\/box\/config - reject
+# > 屏蔽更新
+^https?:\/\/api\.gotokeep\.com\/anno\/v\d\/upgrade\/check - reject
+
+[Script]
+# > 我的页面去推广
+keepStyle = type=http-response,pattern=^https?:\/\/api\.gotokeep\.com\/athena\/v\d\/people\/my$,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/keepStyle.js
+# > 应用底部栏净化
+keepStyle = type=http-response,pattern=^https?:\/\/api\.gotokeep\.com\/config\/v\d\/basic,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/keepStyle.js
+# > 首页信息流去广告
+keepStyle = type=http-response,pattern=^https?:\/\/api\.gotokeep\.com\/twins\/v4\/feed\/course,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/keepStyle.js
+
