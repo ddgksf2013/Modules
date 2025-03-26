@@ -71,6 +71,12 @@ CONFIG = {
             "desc": "Converted from QX Ximalaya AdBlock Rules"
         },
         {
+            "input_url": "https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/KeepAds.conf",
+            "output_file": "Adblock/KeepAds.sgmodule",
+            "name": "Keep AdBlock",
+            "desc": "Converted from QX Keep AdBlock Rules"
+        },
+        {
             "input_url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/master/coolapk.js",
             "output_file": "Adblock/CoolapkAds.sgmodule",
             "name": "Coolapk AdBlock",
