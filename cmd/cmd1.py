@@ -47,7 +47,7 @@ CONFIG = {
             "desc": "Converted from QX Smzdm AdBlock Rules"
         },
         {
-            "input_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/StartUp.conf",
+            "input_url": "https://gist.githubusercontent.com/ddgksf2013/12ef6aad209155e7eb62c5b00c11b9dd/raw/StartUpAds.conf",
             "output_file": "Adblock/StartUpAds.sgmodule",
             "name": "StartUp AdBlock",
             "desc": "Converted from QX StartUp AdBlock Rules"
