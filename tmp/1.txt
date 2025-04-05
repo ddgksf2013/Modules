@@ -1,4 +1,4 @@
-https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/StartUp.conf
+https://gist.githubusercontent.com/ddgksf2013/12ef6aad209155e7eb62c5b00c11b9dd/raw/StartUpAds.conf
 https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/Ximalaya.conf
 https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/BilibiliAds.conf
 https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/Weibo.conf
