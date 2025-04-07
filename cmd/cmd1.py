@@ -29,7 +29,7 @@ CONFIG = {
             "desc": "Converted from QX CaiYun AdBlock Rules"
         },
         {
-            "input_url": "https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/CaiYunAds.conf",
+            "input_url": "https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/CainiaoAds.conf",
             "output_file": "Adblock/CainiaoAds.sgmodule",
             "name": "Cainiao AdBlock",
             "desc": "Converted from QX Cainiao AdBlock Rules"
