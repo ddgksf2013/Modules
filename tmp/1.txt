@@ -9,7 +9,7 @@ https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/XiaoHongShuAds.conf
 https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/NeteaseAds.conf
 https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/SmzdmAds.conf
 https://gist.githubusercontent.com/ddgksf2013/bb1dadbd32f67c68772caebcc70b0a33/raw/pipixia.adblock.js
-https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/Cainiao.conf
+https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/CaiYunAds.conf
 https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/CaiYunAds.conf
 https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/Html/Douban.conf
 https://raw.githubusercontent.com/app2smile/rules/master/module/qidian.conf
