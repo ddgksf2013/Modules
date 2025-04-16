@@ -11,27 +11,27 @@
 
 [Script]
 # > 伪装VIP解锁48小时降水[需登录][新验证接口][需旧版≤ 7.20.2]@ddgksf2013
-caiyun_json = type=http-response,pattern=^https?:\/\/biz\.cyapi\.cn\/api\/v\d\/user_detail,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/caiyun_json.js
+caiyun_json = type=http-response,pattern=^https?:\/\/biz\.cyapi\.cn\/api\/v\d\/user_detail,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/caiyun_json.js
 # > 伪装VIP解锁48小时降水[需登录][需旧版≤ 7.20.2]@ddgksf2013
-caiyun_json = type=http-response,pattern=^https?:\/\/biz\.cyapi\.cn\/v\d\/user,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/caiyun_json.js
+caiyun_json = type=http-response,pattern=^https?:\/\/biz\.cyapi\.cn\/v\d\/user,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/caiyun_json.js
 # > 图层推广@ddgksf2013
-caiyun_json = type=http-response,pattern=^https?:\/\/wrapper\.cyapi\.cn\/v\d\/activity,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/caiyun_json.js
+caiyun_json = type=http-response,pattern=^https?:\/\/wrapper\.cyapi\.cn\/v\d\/activity,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/caiyun_json.js
 # > 活动推广@ddgksf2013
-caiyun_json = type=http-response,pattern=^https?:\/\/api\.caiyunapp\.com\/v\d\/activity,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/caiyun_json.js
+caiyun_json = type=http-response,pattern=^https?:\/\/api\.caiyunapp\.com\/v\d\/activity,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/caiyun_json.js
 # > 首页顶部推广@ddgksf2013
-caiyun_json = type=http-response,pattern=^https?:\/\/starplucker\.cyapi\.cn\/v\d/operation/homefeatures,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/caiyun_json.js
+caiyun_json = type=http-response,pattern=^https?:\/\/starplucker\.cyapi\.cn\/v\d/operation/homefeatures,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/caiyun_json.js
 # > SVIP提醒推广@ddgksf2013
-caiyun_json = type=http-response,pattern=^https?:\/\/starplucker\.cyapi\.cn\/v\d/notification/message_center,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/caiyun_json.js
+caiyun_json = type=http-response,pattern=^https?:\/\/starplucker\.cyapi\.cn\/v\d/notification/message_center,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/caiyun_json.js
 # > 雨季特惠提醒@ddgksf2013
-caiyun_json = type=http-response,pattern=^https?:\/\/starplucker\.cyapi\.cn\/v\d/config/cypage,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/caiyun_json.js
+caiyun_json = type=http-response,pattern=^https?:\/\/starplucker\.cyapi\.cn\/v\d/config/cypage,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/caiyun_json.js
 # > 发现页信息流推荐@ddgksf2013
-caiyun_json = type=http-response,pattern=^https?:\/\/starplucker\.cyapi\.cn\/v\d/operation/feeds,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/caiyun_json.js
+caiyun_json = type=http-response,pattern=^https?:\/\/starplucker\.cyapi\.cn\/v\d/operation/feeds,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/caiyun_json.js
 # > 发现页banners@ddgksf2013
-caiyun_json = type=http-response,pattern=^https?:\/\/starplucker\.cyapi\.cn\/v\d/operation/banners,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/caiyun_json.js
+caiyun_json = type=http-response,pattern=^https?:\/\/starplucker\.cyapi\.cn\/v\d/operation/banners,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/caiyun_json.js
 # > 发现页中间部分@ddgksf2013
-caiyun_json = type=http-response,pattern=^https?:\/\/starplucker\.cyapi\.cn\/v\d/operation/features,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/caiyun_json.js
+caiyun_json = type=http-response,pattern=^https?:\/\/starplucker\.cyapi\.cn\/v\d/operation/features,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/caiyun_json.js
 # > 发现页活动@ddgksf2013
-caiyun_json = type=http-response,pattern=^https?:\/\/starplucker\.cyapi\.cn\/v\d/campaigns,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/caiyun_json.js
+caiyun_json = type=http-response,pattern=^https?:\/\/starplucker\.cyapi\.cn\/v\d/campaigns,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/caiyun_json.js
 
 [MITM]
 hostname = %APPEND% wrapper.cyapi.cn, api.caiyunapp.com, starplucker.cyapi.cn, ad.cyapi.cn
