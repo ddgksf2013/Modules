@@ -2,7 +2,7 @@ name: Update Adblock Module
 
 on:
   schedule:
-    - cron: '0 0 */5 * *'  
+    - cron: '0 0 */6 * *'  
   workflow_dispatch:  # 允许手动触发
 jobs:
   build:
