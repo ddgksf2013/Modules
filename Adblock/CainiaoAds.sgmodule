@@ -7,7 +7,9 @@
 
 [URL Rewrite]
 # > 菜鸟裹裹_通用广告请求@ddgksf2013
-^https?:\/\/[a-zA-Z0-9_.-]+\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\. - reject
+^https?:\/\/[a-zA-Z0-9_.-]+\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(?!.*_home) - reject
+# > 菜鸟裹裹_首页底部商品推广@ddgksf2013
+^https?:\/\/[a-zA-Z0-9_.-]+\.cainiao\.com\/gw\/mtop\.cainiao\.nbcps\.presentation\.fetch\.cn - reject
 # > 菜鸟裹裹_支付宝小程序_通用广告请求@ddgksf2013
 ^https?:\/\/[a-zA-Z0-9_.-]+\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\. - reject
 # > 菜鸟裹裹_支付宝小程序_底部商品推广新@ddgksf2013
