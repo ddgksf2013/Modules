@@ -34,8 +34,8 @@
 # > 知乎_疑似推荐页内容更新红点@blackmatrix7
 ^https?:\/\/api\.zhihu\.com\/feed\/render\/revisit\/tag_config - reject
 # > 知乎_暂不清楚作用@blackmatrix7
-^https?:\/\/api\.zhihu\.com\/commercial_api - reject
-^https?:\/\/api\.zhihu\.com\/ad-style-service\/request - reject
+^https?:\/\/.*zhihu\.com\/commercial_api - reject
+^https?:\/\/.*zhihu\.com\/ad-style-service\/request - reject
 # > 知乎_文章页去除底部广告@blackmatrix7
 ^https?:\/\/www\.zhihu\.com\/api\/v\d\/articles\/\d+\/recommendation - reject
 # > 知乎_我的页面下方内容@ddgksf2013
