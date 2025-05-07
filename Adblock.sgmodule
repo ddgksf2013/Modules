@@ -2,7 +2,7 @@
 #!desc=融合版[由GithubAction自动更新]，包括墨鱼去开屏2.0、喜马拉雅、哔哩哔哩、微博、KEEP、知乎、百度网盘、高德地图、小红书、网易云、什么值得买、菜鸟、彩云天气、豆瓣网页
 #!author=ddgksf2013
 #!contributor=@blackmatrix7, @app2smile
-#!logtime=2025-05-01 08:45:08
+#!logtime=2025-05-07 08:40:48
 #!homepage=https://github.com/ddgksf2013
 #!tgchannel=https://t.me/ddgksf2021
 #!moduleurl=https://github.com/ddgksf2013/Modules/raw/main/Adblock.sgmodule
@@ -112,6 +112,8 @@
 ^https?:\/\/.*yuanfudao\.com\/leo-mis\/iphone\/splashes - reject
 ^https?:\/\/.*zhangyuyidong\.cn\/api\/ - reject
 ^https?:\/\/.*zhangyuyidong\.cn\/api\/zysdk - reject
+^https?:\/\/.*zhihu\.com\/ad-style-service\/request - reject
+^https?:\/\/.*zhihu\.com\/commercial_api - reject
 ^https?:\/\/.*zongheng\.com\/iosapi\/system\/startup - reject
 ^https?:\/\/103\.41\.167\.237 - reject
 ^https?:\/\/103\.91\.210\.141\:2515\/xgapp\.php\/v2\/top_notice - reject
@@ -250,11 +252,9 @@
 ^https?:\/\/api\.zcool\.com\.cn\/.*common\/open-screen - reject
 ^https?:\/\/api\.zhihu\.com\/(notifications\/v\d\/count) - reject
 ^https?:\/\/api\.zhihu\.com\/ab\/api\/v1\/products\/zhihu\/platforms\/ios\/config - reject
-^https?:\/\/api\.zhihu\.com\/ad-style-service\/request - reject
 ^https?:\/\/api\.zhihu\.com\/api\/v4\/ecom_data\/config - reject
 ^https?:\/\/api\.zhihu\.com\/api\/v4\/profile\/cards - reject
 ^https?:\/\/api\.zhihu\.com\/brand\/question\/\d+/card\? - reject
-^https?:\/\/api\.zhihu\.com\/commercial_api - reject
 ^https?:\/\/api\.zhihu\.com\/commercial_api\/app_float_layer - reject
 ^https?:\/\/api\.zhihu\.com\/content-distribution-core\/bubble\/common\/settings - reject
 ^https?:\/\/api\.zhihu\.com\/drama\/hot-drama-list - reject
