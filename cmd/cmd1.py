@@ -1,6 +1,7 @@
 # author @realyn
 import requests
 import os
+import re
 
 CONFIG = {
     "conversions": [
@@ -108,8 +109,9 @@ def convert_to_surge(qx_content, name, desc, input_url):
             continue  
         
 
-        if stripped_line.startswith('hostname = '):
-            sections["MITM"].append(stripped_line.replace("hostname = ", "hostname = %APPEND% "))
+        if stripped_line.startswith('hostname'):
+            modified_line = re.sub(r'^hostname\s*=\s*', 'hostname = %APPEND% ', stripped_line)
+            sections["MITM"].append(modified_line)
             continue
         
 
