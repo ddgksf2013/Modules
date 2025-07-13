@@ -41,3 +41,6 @@ amap = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/dsp\/pr
 # > 高德地图_搜索框热词@ddgksf2013
 amap = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/new_hotword,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/amap.js
 
+[MITM]
+hostname = %APPEND% *.amap.com
+

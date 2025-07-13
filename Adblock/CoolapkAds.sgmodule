@@ -23,3 +23,6 @@ coolapk = type=http-response,pattern=^https?:\/\/api.coolapk.com\/v6\/feed\/deta
 # > 酷安_酷品页推广@ddgksf2013
 coolapk = type=http-response,pattern=https://api.coolapk.com/v6/page/dataList\?.*title=%E9%85,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js
 
+[MITM]
+hostname = %APPEND% api.coolapk.com
+
