@@ -25,6 +25,8 @@
 ^https?:\/\/app\.bilibili\.com\/x\/v\d\/search\/defaultwords - reject
 # > BiliBili_哔哩哔哩_屏蔽DefaultWord@ddgksf2013
 ^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/Default - reject
+# ～ BiliBili_哔哩哔哩_屏蔽DefaultWord@ddgksf2013
+^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/Default - reject
 
 [Script]
 # > BiliBili_哔哩哔哩_视频播放下方商品推广@ddgksf2013
@@ -53,8 +55,16 @@ bilibili_json = type=http-response,pattern=^https?:\/\/app\.bilibili\.com\/x\/v2
 bilibili_json = type=http-response,pattern=^https?:\/\/app\.bilibili\.com\/x\/resource\/top\/activity,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/bilibili_json.js
 # > BiliBili_哔哩哔哩_热搜发现@ddgksf2013
 bilibili_json = type=http-response,pattern=^https://app.bilibili.com/x/v2/search/square,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/bilibili_json.js
-# > BiliBili_哔哩哔哩_protobuf处理@kokoryh
-bilibili = type=http-response,pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(?:app\.(?:interface\.v1\.(?:Teenagers\/ModeStatus|Search\/DefaultWords)|show\.v1\.Popular\/Index|dynamic\.v2\.Dynamic\/DynAll|view(?:unite)?\.v1\.View\/(?:View|ViewProgress|TFInfo|RelatesFeed)|playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite)|polymer\.app\.search\.v1\.Search\/SearchAll|community\.service\.dm\.v1\.DM\/DmView|main\.community\.reply\.v1\.Reply\/MainList|pgc\.gateway\.player\.v2\.PlayURL\/PlayView),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/kokoryh/Sparkle/master/dist/bilibili.protobuf.js
+# ～ BiliBili_哔哩哔哩_搜索去广告@BiliUniverse
+response = type=http-response,pattern=^https?:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll$,requires-body=1,max-size=0,script-path=https://github.com/BiliUniverse/ADBlock/releases/download/v0.6.19/response.bundle.js
+# ～ BiliBili_哔哩哔哩_交互点赞投票弹幕及会员弹幕@BiliUniverse
+response = type=http-response,pattern=^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.community\.service\.dm\.v1\.DM\/(DmView|DmSegMobile),requires-body=1,max-size=0,script-path=https://github.com/BiliUniverse/ADBlock/releases/download/v0.6.19/response.bundle.js
+# ～ BiliBili_哔哩哔哩_青少年弹窗@BiliUniverse
+response = type=http-response,pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus,requires-body=1,max-size=0,script-path=https://github.com/BiliUniverse/ADBlock/releases/download/v0.6.19/response.bundle.js
+# ～ BiliBili_哔哩哔哩_UP主推荐广告[适配ipad端]@BiliUniverse
+response = type=http-response,pattern=^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.(view|viewunite)\.v1\.View\/(View|TFInfo)$,requires-body=1,max-size=0,script-path=https://github.com/BiliUniverse/ADBlock/releases/download/v0.6.19/response.bundle.js
+# ～ BiliBili_哔哩哔哩_动态综合页及视频页去广告@BiliUniverse
+response = type=http-response,pattern=^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.dynamic\.v2\.Dynamic\/Dyn(All|Video)$,requires-body=1,max-size=0,script-path=https://github.com/BiliUniverse/ADBlock/releases/download/v0.6.19/response.bundle.js
 
 [MITM]
 hostname = %APPEND% -broadcast.chat.bilibili.com, -cm.bilibili.com, -*cdn*.biliapi.net, -*tracker*.biliapi.net, app.bilibili.com, api.live.bilibili.com, *.bilibili.com, *.bili*.*, *.bilibili.*, grpc.biliapi.net,*biliapi.net
