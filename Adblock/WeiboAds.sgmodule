@@ -7,7 +7,7 @@
 
 [Rule]
 # > 微博国际版_开屏拦截@ddgksf2013
-DOMAIN-SUFFIX, api.touch-moblie.com, reject
+DOMAIN-SUFFIX, api.touch-moblie.com, REJECT
 
 [URL Rewrite]
 # > 微博_启动感兴趣弹窗@ddgksf2013
