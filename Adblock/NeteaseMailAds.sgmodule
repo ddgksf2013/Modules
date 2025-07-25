@@ -1,0 +1,28 @@
+#!name=NeteaseMail AdBlock
+#!desc=Converted from QX NeteaseMailAds AdBlock Rules
+#!author=ddgksf2013
+#!tgchannel=https://t.me/ddgksf2021
+# Surge Module Source: https://github.com/ddgksf2013/Modules
+# Original QX Config Source: https://raw.githubusercontent.com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/NeteaseMailAds.conf
+
+[URL Rewrite]
+# > 任务推广@ddgksf2013
+^https?:\/\/dashi\.163\.com\/task-center-api\/fapi\/task - reject
+# > 通用广告请求@ddgksf2013
+^https?:\/\/appconf\.mail\.163\.com\/mmad\/master\/get\.do - reject
+# > 状态判断@ddgksf2013
+^https?:\/\/appconf\.mail\.163\.com\/mailoperating\/mailmaster\/api\/operator\/get - reject
+# > 免费邮箱提醒@ddgksf2013
+^https?:\/\/appconf\.mail\.163\.com\/mailmaster\/getRegConfig\.do - reject
+# > 浮ICON推广@ddgksf2013
+^https?:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/config\/function\.do - reject
+
+[Body Rewrite]
+# > 我的页面简化@ddgksf2013
+http-response-jq ^https?:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/page\/.*conf\.do '.data |= del(.masterLoginGuideList, .masterOperatorList, .functionOperatorInfoList, .memberOperator, .activityTabInfoList, .extList)'
+# > Userinfo@ddgksf2013
+http-response-jq ^https?:\/\/mail\.163\.com\/fgw\/mailsrv-webrobot\/.*user\/info '.result |= del(.assistantInfo, .quotaData)'
+
+[MITM]
+hostname = %APPEND% dashi.163.com, appconf.mail.163.com, mail.163.com
+

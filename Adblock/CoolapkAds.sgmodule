@@ -11,17 +11,17 @@
 
 [Script]
 # > 酷安_开屏广告@ddgksf2013
-coolapk = type=http-response,pattern=^https?:\/\/api.coolapk.com\/v6\/main\/init,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js
+coolapk=type=http-response,pattern=^https?:\/\/api.coolapk.com\/v6\/main\/init,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js
 # > 酷安_推广广告@ddgksf2013
-coolapk = type=http-response,pattern=^https?:\/\/api.coolapk.com\/v6\/dataList,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js
+coolapk=type=http-response,pattern=^https?:\/\/api.coolapk.com\/v6\/dataList,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js
 # > 酷安_首页广告@ddgksf2013
-coolapk = type=http-response,pattern=^https?:\/\/api.coolapk.com\/v6\/main\/indexV8,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js
+coolapk=type=http-response,pattern=^https?:\/\/api.coolapk.com\/v6\/main\/indexV8,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js
 # > 酷安_评论广告@ddgksf2013
-coolapk = type=http-response,pattern=^https?:\/\/api.coolapk.com\/v6\/feed\/replyList,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js
+coolapk=type=http-response,pattern=^https?:\/\/api.coolapk.com\/v6\/feed\/replyList,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js
 # > 酷安_商品推广@ddgksf2013
-coolapk = type=http-response,pattern=^https?:\/\/api.coolapk.com\/v6\/feed\/detail,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js
+coolapk=type=http-response,pattern=^https?:\/\/api.coolapk.com\/v6\/feed\/detail,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js
 # > 酷安_酷品页推广@ddgksf2013
-coolapk = type=http-response,pattern=https://api.coolapk.com/v6/page/dataList\?.*title=%E9%85,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js
+coolapk=type=http-response,pattern=https://api.coolapk.com/v6/page/dataList\?.*title=%E9%85,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js
 
 [MITM]
 hostname = %APPEND% api.coolapk.com

@@ -55,40 +55,40 @@
 
 [Script]
 # > 知乎_我的页面开通会员CARD@ddgksf2013
-Zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/unlimited/go/my_card,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
+Zhihu=type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/unlimited/go/my_card,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
 # > 知乎_开屏广告@ddgksf2013
-Zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/commercial_api.*launch_v2,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
+Zhihu=type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/commercial_api.*launch_v2,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
 # > 知乎_用户信息@ddgksf2013
-Zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/people/self$,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
+Zhihu=type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/people/self$,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
 # > 知乎_推荐信息流去广告@ddgksf2013
-Zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/topstory\/recommend,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
+Zhihu=type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/topstory\/recommend,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
 # > 知乎_搜索页去除推广@ddgksf2013
-Zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/search\/preset_words,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
+Zhihu=type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/search\/preset_words,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
 # > 知乎_猜你想搜下面条目['猜你想搜'四个字无法去除]@ddgksf2013
-Zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/search\/recommend_query,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
+Zhihu=type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/search\/recommend_query,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
 # > 知乎_删除会员页面会员购@ddgksf2013
-Zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/tabs,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
+Zhihu=type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/tabs,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
 # > 知乎_热榜页去除广告@ddgksf2013
-Zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/v2\/topstory\/hot-lists,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
+Zhihu=type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/v2\/topstory\/hot-lists,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
 # > 知乎_会员页面顶部处理@ddgksf2013
-Zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/header,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
+Zhihu=type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/header,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
 # > 知乎_回答信息流去广告@ddgksf2013
-Zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/next-data,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
-Zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/next-render,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
+Zhihu=type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/next-data,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
+Zhihu=type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/next-render,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
 # > 知乎_问题回答列表@ddgksf2013
-Zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/(v4\/)?questions\/\d+\/feeds,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
+Zhihu=type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/(v4\/)?questions\/\d+\/feeds,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
 # > 知乎_回答内容优化@ddgksf2013
-Zhihu = type=http-response,pattern=^https?:\/\/www\.zhihu\.com\/appview\/v2\/answer\/,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
+Zhihu=type=http-response,pattern=^https?:\/\/www\.zhihu\.com\/appview\/v2\/answer\/,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
 # > 知乎_会员页面购物处理@ddgksf2013
-Zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/modules,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
+Zhihu=type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/modules,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
 # > 知乎_修改用户盐值@blackmatrix7
-Zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/user-credit\/basis,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
+Zhihu=type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/user-credit\/basis,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
 # > 知乎_消息页@blackmatrix7
-Zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/notifications\/v3\/(message|timeline\/entry\/system_message),requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
+Zhihu=type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/notifications\/v3\/(message|timeline\/entry\/system_message),requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
 # > 知乎_关注页面去除今日话题和为您推荐@ddgksf2013
-Zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/moments_v3,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
+Zhihu=type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/moments_v3,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
 # > 知乎_搜索发现@ddgksf2013
-Zhihu = type=http-response,pattern=https://api.zhihu.com/search/hot_search,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
+Zhihu=type=http-response,pattern=https://api.zhihu.com/search/hot_search,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
 
 [MITM]
 hostname = %APPEND% 118.89.204.198,103.41.167.237,2402:4e00:1200:ed00:0:9089:6dac:96b6,www.zhihu.com,api.zhihu.com,zhuanlan.zhihu.com,appcloud2.zhihu.com,m-cloud.zhihu.com,103.41.167.236,103.41.167.234,103.41.167.235,103.41.167.226
