@@ -28,6 +28,8 @@
 ^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkconfig\.php - reject
 # > 微博_Spotlight@ddgksf2013
 ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/hot\/hours_spotlight - reject
+# > 微博国际版_开屏拦截@ddgksf2013
+host-suffix, - reject
 # > 微博国际版_趋势页热门影片@ddgksf2013
 ^https?:\/\/api\.weibo\.cn\/\d\/cardlist\?v_f=.*Weibo_intl - reject
 # > 微博国际版_屏蔽hotsearch@ddgksf2013
