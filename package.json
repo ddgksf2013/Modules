@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "got": "^14.4.2",
-    "request": "^2.88.2"
-  }
-}
