@@ -3,7 +3,7 @@
 #!author=ddgksf2013
 #!tgchannel=https://t.me/ddgksf2021
 # Surge Module Source: https://github.com/ddgksf2013/Modules
-# Original QX Config Source: https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/BilibiliAds.conf
+# Original QX Rewrite Source: https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/BilibiliAds.conf
 
 [URL Rewrite]
 //2022-03-13 - reject

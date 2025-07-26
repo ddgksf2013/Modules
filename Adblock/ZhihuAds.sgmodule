@@ -3,7 +3,7 @@
 #!author=ddgksf2013
 #!tgchannel=https://t.me/ddgksf2021
 # Surge Module Source: https://github.com/ddgksf2013/Modules
-# Original QX Config Source: https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
+# Original QX Rewrite Source: https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
 
 [URL Rewrite]
 # > 知乎_拦截DNS解析@blackmatrix7

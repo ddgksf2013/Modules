@@ -3,7 +3,7 @@
 #!author=ddgksf2013
 #!tgchannel=https://t.me/ddgksf2021
 # Surge Module Source: https://github.com/ddgksf2013/Modules
-# Original QX Config Source: https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Ximalaya.conf
+# Original QX Rewrite Source: https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Ximalaya.conf
 
 [URL Rewrite]
 # > XiMaLaYa_喜马拉雅_修复轮播Ad失效Bug@ddgksf2013

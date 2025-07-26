@@ -3,7 +3,7 @@
 #!author=ddgksf2013
 #!tgchannel=https://t.me/ddgksf2021
 # Surge Module Source: https://github.com/ddgksf2013/Modules
-# Original QX Config Source: https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/KeepAds.conf
+# Original QX Rewrite Source: https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/KeepAds.conf
 
 [URL Rewrite]
 # > 屏蔽应用内弹窗

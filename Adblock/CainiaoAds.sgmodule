@@ -3,7 +3,7 @@
 #!author=ddgksf2013
 #!tgchannel=https://t.me/ddgksf2021
 # Surge Module Source: https://github.com/ddgksf2013/Modules
-# Original QX Config Source: https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/CainiaoAds.conf
+# Original QX Rewrite Source: https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/CainiaoAds.conf
 
 [URL Rewrite]
 # > 菜鸟裹裹_通用广告请求@ddgksf2013

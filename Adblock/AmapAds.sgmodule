@@ -3,7 +3,7 @@
 #!author=ddgksf2013
 #!tgchannel=https://t.me/ddgksf2021
 # Surge Module Source: https://github.com/ddgksf2013/Modules
-# Original QX Config Source: https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Amap.conf
+# Original QX Rewrite Source: https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Amap.conf
 
 [URL Rewrite]
 # > 高德地图_路线规划下方广告@ddgksf2013
