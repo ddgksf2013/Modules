@@ -2,7 +2,7 @@
 #!desc=融合版[由GithubAction自动更新]，包括墨鱼去开屏2.0、喜马拉雅、哔哩哔哩、微博、KEEP、知乎、百度网盘、高德地图、小红书、网易云、什么值得买、菜鸟、彩云天气、豆瓣网页、百度贴吧、网易邮箱、Reddit
 #!author=ddgksf2013
 #!contributor=@blackmatrix7, @app2smile
-#!logtime=2025-07-26 21:05:32
+#!logtime=2025-07-28 14:02:00
 #!homepage=https://github.com/ddgksf2013
 #!tgchannel=https://t.me/ddgksf2021
 #!moduleurl=https://github.com/ddgksf2013/Modules/raw/main/Adblock.sgmodule
@@ -16,13 +16,14 @@
 
 [Rule]
 
+DOMAIN,ad.12306.cn,DIRECT
 DOMAIN-SUFFIX,api.touch-moblie.com,REJECT
 DOMAIN-SUFFIX,iyes.youku.com,REJECT
 IP-CIDR,180.76.76.200/32,REJECT
 
 [URL Rewrite]
 
-^https?:\/\/2025.07.26/c388/v2.0.608 - reject
+^https?:\/\/2025.07.28/c388/v2.0.609 - reject
 ^http:\/\/.*babytree\.com/(plough\.do|go_search\/api\/mobile_search_new\/get_multi_search_default_keywords) - reject
 ^http:\/\/[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,4}(:\d+)?\/amdc\/mobileDispatch - reject
 ^http:\/\/ads.?s?ervice(retry)?\.(kugou|kglink).(com|cn)\/v\d\/ - reject
