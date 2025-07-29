@@ -6,6 +6,8 @@
 # Original QX Rewrite Source: https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Weibo.conf
 
 [Rule]
+# > 微博_分流@ddgksf2013
+DOMAIN, sdkapp.uve.weibo.com, DIRECT
 # > 微博国际版_开屏拦截@ddgksf2013
 DOMAIN-SUFFIX, api.touch-moblie.com, REJECT
 
