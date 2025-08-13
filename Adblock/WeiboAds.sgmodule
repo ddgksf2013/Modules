@@ -8,10 +8,15 @@
 [Rule]
 # > 微博_分流@ddgksf2013
 DOMAIN, sdkapp.uve.weibo.com, DIRECT
+DOMAIN, adstrategy.biz.weibo.com, REJECT
 # > 微博国际版_开屏拦截@ddgksf2013
 DOMAIN-SUFFIX, api.touch-moblie.com, REJECT
 
 [URL Rewrite]
+# > 微博_首页信息流可能感兴趣推广@ddgksf2013
+^https?:\/\/api\.weibo\.cn\/\d\/statuses\/container_positive - reject
+# > 微博_首页顶部弹窗@ddgksf2013
+^https?:\/\/api\.weibo\.cn\/\d\/push\/info - reject
 # > 微博_启动感兴趣弹窗@ddgksf2013
 ^https?:\/\/api\.weibo\.cn\/.*account\/recommend_interesttags - reject
 # > 微博_首页顶部直播推荐Tab@ddgksf2013
@@ -40,6 +45,10 @@ DOMAIN-SUFFIX, api.touch-moblie.com, REJECT
 ^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php\?a=hot_search_users - reject
 # > 微博国际版_屏蔽热推荐@ddgksf2013
 ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/ad\/weibointl\? - reject
+
+[Body Rewrite]
+# > 微博_删除侧栏视频流@ddgksf2013
+http-response-jq ^https?:\/\/api\.weibo\.cn\/\d\/ug\/checkin\/stream '.items |= map(select(.category != "card"))'
 
 [Script]
 # > 微博_首页顶部homeExtend@ddgksf2013
