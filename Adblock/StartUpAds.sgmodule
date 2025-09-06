@@ -12,7 +12,7 @@ DOMAIN-SUFFIX,iyes.youku.com,REJECT
 
 [URL Rewrite]
 # > Version
-^https?:\/\/2025.08.27/c393/v2.0.615 - reject
+^https?:\/\/2025.09.06/c393/v2.0.618 - reject
 # > 10
 ^https?:\/\/ftapi\.10jqka\.com\.cn\/futgwapi\/api\/om\/v\d\/ad\/common\/transfer - reject
 # > 139mail
@@ -766,7 +766,6 @@ https?:\/\/m\.sd\.10086\.cn\/zapi\/app_common\/homeWelcome\/welcome.do - reject
 ^https?:\/\/api\.izuiyou\.com\/ad\/ - reject
 # > zhuishushenqi
 ^https?:\/\/adx-cn\.anythinktech\.com\/bid - reject
-^http:\/\/[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,4}(:\d+)?\/amdc\/mobileDispatch - reject
 # > zhangshangdaojucheng
 ^https?:\/\/djcapp\.game\.qq\.com\/daoju\/igw\/main\/\?_service=welink\.ad\.list - reject
 # > zhangyue
@@ -824,7 +823,7 @@ dict=type=http-response,pattern=^https?:\/\/api\.369cx\.cn\/v\d\/Splash\/GetSpla
 555Ad=type=http-response,pattern=^https?:\/\/[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,4}(:\d+)?\/api\/v\d\/movie\/index_recommend,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/555Ad.js
 123pan=type=http-response,pattern=^https?:\/\/www\.123pan\.com\/s\/[0-9a-zA-Z=_/-]+\.html,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/123pan.js
 # > amdc
-amdc=type=http-response,pattern=^http:\/\/amdc\.m\.taobao\.com,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/amdc.js
+amdc=type=http-response,pattern=^http:\/\/[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,4}(:\d+)?\/amdc\/mobileDispatch,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/amdc.js
 # > ahfs
 ahfs=type=http-response,pattern=^https?:\/\/.*(xbwpys|ahhhhfs)\.com\/($|[0-9a-zA-Z_/]+\/$),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/ahfs.js
 # > baiduditu

@@ -1,0 +1,45 @@
+#!name=Goofish AdBlock
+#!desc=Converted from QX Goofish AdBlock Rules
+#!author=ddgksf2013
+#!tgchannel=https://t.me/ddgksf2021
+# Surge Module Source: https://github.com/ddgksf2013/Modules
+# Original QX Rewrite Source: https://raw.githubusercontent.com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/GoofishAds.conf
+
+[Rule]
+DOMAIN-SUFFIX,iyes.youku.com,REJECT
+
+[URL Rewrite]
+# > 开屏广告@ddgksf2013
+^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.*splash\.ads - reject
+# > 开屏通用广告@ddgksf2013
+https://(g-)?acs.m.goofish.com/gw/mtop.idle.ad.expose - reject
+
+[Body Rewrite]
+# > 首页顶部Tab@ddgksf2013
+http-response-jq ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idlehome.home.circle.list '.data.circleList |= map(select(.bizCode != "saveMoney"))'
+# > 首页信息流@ddgksf2013
+http-response-jq ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idlehome.home.nextfresh '.data.homeTopList |= [ .[0] ] | .data.sections |= map(select(.data.bizType == "item"))'
+# > 搜索填词@ddgksf2013
+http-response-jq ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idlemtopsearch.search.shade '.data.singleShadeWords =[{}]'
+# > 猜你可能找@ddgksf2013
+http-response-jq ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idlemtopsearch.item.search.activate '.data.cardList = [{}]'
+# > 搜索发现@ddgksf2013
+http-response-jq ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idlemtopsearch.search.discover 'del(.data.resultList)'
+# > 我的页面@ddgksf2013
+http-response-jq ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.idle.user.page.my.adapter '.data.ability=[] | .data.container.sections |= map(select(.sectionBizCode | test("head|user|trade")))'
+# > 我的页面信息流处理@ddgksf2013
+http-response-jq ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idle.item.buy.feeds '.data.sections = [{}]'
+# > 本地信息流AD@ddgksf2013
+http-response-jq ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idle.local.home '.data.sections |= map(select(.data.bizType == "item"))'
+# > 搜索结果信息流AD@ddgksf2013
+http-response-jq ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idlemtopsearch.search '.data.resultList |= map(select(.data.item.main.clickParam.args.biz_type == "item"))'
+# > 商品底部推荐商品信息流AD@ddgksf2013
+http-response-jq ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idle.item.recommend '.data.cardList |= map(select(.cardData.bizType != "mamaAD"))'
+
+[Script]
+# > AMDC处理@ddgksf2013
+amdc=type=http-response,pattern=^http:\/\/[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,4}(:\d+)?\/amdc\/mobileDispatch,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/amdc.js
+
+[MITM]
+hostname = %APPEND% acs.m.goofish.com, g-acs.m.goofish.com
+
