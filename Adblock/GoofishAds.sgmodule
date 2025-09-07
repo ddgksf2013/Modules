@@ -30,7 +30,7 @@ http-response-jq ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idlemtop
 # > 我的页面@ddgksf2013
 http-response-jq ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.idle.user.page.my.adapter '.data.ability=[] | .data.container.sections |= map(select(.sectionBizCode | test("head|user|trade")))'
 # > 我的页面信息流处理@ddgksf2013
-http-response-jq ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idle.item.buy.feeds '.data.sections = [{}]'
+http-response-jq ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idle.item.buy.feeds 'del(.data.sections)'
 # > 本地信息流AD@ddgksf2013
 http-response-jq ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idle.local.home '.data.sections |= map(select(.data.bizType == "item"))'
 # > 搜索结果信息流AD@ddgksf2013
