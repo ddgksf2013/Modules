@@ -12,9 +12,11 @@ DOMAIN-SUFFIX,iyes.youku.com,REJECT
 # > 开屏广告@ddgksf2013
 ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.*splash\.ads - reject
 # > 开屏通用广告@ddgksf2013
-https://(g-)?acs.m.goofish.com/gw/mtop.idle.ad.expose - reject
+^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.idle.ad.expose - reject
 
 [Body Rewrite]
+# > 首页右下角悬浮球@ddgksf2013
+http-response-jq ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idle.user.strategy.list '.data.strategies = [{}]'
 # > 首页顶部Tab@ddgksf2013
 http-response-jq ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop.taobao.idlehome.home.circle.list '.data.circleList |= map(select(.bizCode != "saveMoney"))'
 # > 首页信息流@ddgksf2013
