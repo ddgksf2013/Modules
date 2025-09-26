@@ -1,0 +1,36 @@
+#!name=QiShuiMusic AdBlock
+#!desc=Converted from QX QiShuiMusic AdBlock Rules
+#!author=ddgksf2013
+#!tgchannel=https://t.me/ddgksf2021
+# Surge Module Source: https://github.com/ddgksf2013/Modules
+# Original QX Rewrite Source: https://raw.githubusercontent.com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/QiShuiMusicAds.conf
+
+[URL Rewrite]
+# > 视频广告@ddgksf2013
+^https:\/\/[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,3}\/luna\/media_ads - reject
+# > 通用广告@ddgksf2013
+^https:\/\/[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,3}\/luna\/ads - reject
+# > 位置隐私@ddgksf2013
+^https:\/\/[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,3}\/location\/info - reject
+# > 广告弹窗@ddgksf2013
+^https:\/\/[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,3}\/luna\/commerce - reject
+# > TAGS推荐@ddgksf2013
+^https:\/\/[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,3}\/luna\/hashtag\/recommend - reject
+# > DNS处理@ddgksf2013
+^https:\/\/tnc.*zijieapi\.com\/get_domains - reject
+
+[Body Rewrite]
+# > 我的页面推广@ddgksf2013
+http-response-jq ^https:\/\/[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,3}\/luna\/me\? 'del(.reward_ad_banner)'
+# > 会员免费听整月VIEW@ddgksf2013
+http-response-jq ^https:\/\/[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,3}\/luna\/card 'del(.preview_guide)'
+# > 热门搜索@ddgksf2013
+http-response-jq ^https:\/\/[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,3}\/luna\/search-block 'del(.search_chart_block)'
+# > 搜索界面活动@ddgksf2013
+http-response-jq ^https:\/\/[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,3}\/luna\/activities 'del(.activity_map)'
+# > 音乐流推广@ddgksf2013
+http-response-jq ^https:\/\/[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,3}\/luna\/feed\/song-tab '.items |= map(select(.type == "track"))'
+
+[MITM]
+hostname = %APPEND% beta-luna.douyin.com, api.qishui.com, tnc*-*.zijieapi.com
+
