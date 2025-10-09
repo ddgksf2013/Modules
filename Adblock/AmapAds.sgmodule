@@ -9,6 +9,8 @@
 DOMAIN-SUFFIX, optimus-ads.amap.com, DIRECT
 
 [URL Rewrite]
+# > 高德地图_开屏请求@ddgksf2013
+^https?:\/\/.*\.amap\.com\/ws\/aos\/alimama\/splash_screen - reject
 # > 高德地图_路线规划下方广告@ddgksf2013
 ^https?:\/\/.*\.amap\.com\/ws\/faas\/amap-navigation\/card-service-route-plan\? - reject
 # > 高德地图_Tip请求@ddgksf2013
@@ -45,5 +47,5 @@ amap=type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/dsp\/prof
 amap=type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/new_hotword,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/amap.js
 
 [MITM]
-hostname = %APPEND% m5.amap.com, m5-zb.amap.com, center.amap.com
+hostname = %APPEND% m5.amap.com, m5-zb.amap.com, center.amap.com, amap-aos-info-nogw.amap.com
 

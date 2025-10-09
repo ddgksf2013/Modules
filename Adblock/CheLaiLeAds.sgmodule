@@ -1,0 +1,30 @@
+#!name=CheLaiLe AdBlock
+#!desc=Converted from QX CheLaiLe AdBlock Rules
+#!author=ddgksf2013
+#!tgchannel=https://t.me/ddgksf2021
+# Surge Module Source: https://github.com/ddgksf2013/Modules
+# Original QX Rewrite Source: https://raw.githubusercontent.com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/CheLaiLeAds.cof
+
+[URL Rewrite]
+# > 我的页面@ddgksf2013
+^https?:\/\/.*chelaile\.net\.cn\/goocity\/flowPos\/listByPos - reject
+# > 详情页@ddgksf2013
+^https?:\/\/cdn\.web\.chelaile\.net\.cn\/info-flow\/index\.html - reject
+# > 通用广告@ddgksf2013
+^https?:\/\/.*chelaile\.net\.cn\/(api\/)?adpub - reject
+# > IPdir处理@ddgksf2013
+^https?:\/\/124\.70\.194\.16\/(ip|adpub) - reject
+# > 我的页面@ddgksf2013
+^https?:\/\/124\.70\.194\.16\/goocity\/flowPos\/listByPos - reject
+# > 公交详情页@ddgksf2013
+^https?:\/\/web\.chelaile\.net\.cn\/api\/operative_position\/infoflow - reject
+# > 隐私跟踪@ddgksf2013
+^https?:\/\/atrace\.chelaile\.net\.cn\/(wx_preloadAd|adAnalysis) - reject
+
+[Script]
+# > 去除底栏@ddgksf2013
+chelaile=type=http-response,pattern=^https?:\/\/.*chelaile\.net\.cn\/goocity\/city!,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/chelaile.js
+
+[MITM]
+hostname = %APPEND% web.chelaile.net.cn, api.chelaile.net.cn, cdn.api.chelaile.net.cn,cdn.web.chelaile.net.cn, atrace.chelaile.net.cn
+
