@@ -48,6 +48,8 @@
 ^https?:\/\/api\.zhihu\.com\/commercial_api\/app_float_layer - reject
 # > 知乎_回答页面相关搜索词@ddgksf2013
 ^https?:\/\/www\.zhihu\.com\/api\/v4\/search\/related_queries\/answer\/ - reject
+# > 知乎_广告请求@ddgksf2013
+^http:\/\/[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,4}(:\d+)?\/v2\/resolv - reject
 # > 知乎_首页左侧图标@ddgksf2013
 ^https?:\/\/api\.zhihu\.com\/root\/window - reject
 # > 知乎_我的页面底部@ddgksf2013
