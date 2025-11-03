@@ -6,9 +6,13 @@
 # Original QX Rewrite Source: https://raw.githubusercontent.com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/FakeiOSAds.conf
 
 [URL Rewrite]
-# > 通用匹配版
+# > common
 ^http:\/\/[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,4}(:\d+)?\/.*?\/v\d\/(version|notice\?|top_notice\?|advert\?position=[^2]+) - reject
 
+[Body Rewrite]
+# > juzhi
+http-response-jq ^http:\/\/[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,4}(:\d+)?\/api\/v\d\/config\/getConfigList\.do '.data |= map(select(.keyName | test("config\\.(ad|search|recommend)") | not))'
+
 [MITM]
-hostname = %APPEND% 
+hostname = %APPEND% app.dsx.ac
 

@@ -1,0 +1,32 @@
+#!name=MoJiWeather AdBlock
+#!desc=Converted from QX MoJiWeather AdBlock Rules
+#!author=ddgksf2013
+#!tgchannel=https://t.me/ddgksf2021
+# Surge Module Source: https://github.com/ddgksf2013/Modules
+# Original QX Rewrite Source: https://raw.githubusercontent.com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/MoJiWeatherAds.conf
+
+[Rule]
+# > 开屏广告@ddgksf2013
+DOMAIN-SUFFIX, adlaunch.moji.com, REJECT
+
+[URL Rewrite]
+# > 首页顶部浮窗推广@ddgksf2013
+^https?:\/\/.*api\.moji\.com\/flycard\/flyCard - reject
+# > 首页底部短视频流@ddgksf2013
+^https?:\/\/.*api\.moji\.com\/shortvideo - reject
+# > 商品推广@ddgksf2013
+^https?:\/\/.*api\.moji\.com\/json\/advertising_goods - reject
+# > 屏蔽时景发现页@ddgksf2013
+^https?:\/\/.*api\.moji\.com\/forum - reject
+# > 屏蔽时景关注@ddgksf2013
+^https?:\/\/.*api\.moji\.com\/user\/dynamic_v\d\/json\/someone_interest - reject
+# > DNS处理@ddgksf2013
+^https:\/\/tnc.*zijieapi\.com\/get_domains - reject
+
+[Body Rewrite]
+# > 我的页面@ddgksf2013
+http-response-jq ^https?:\/\/.*api\.moji\.com\/json\/entrance\/list '.entrance_region_res_list |= map(select(.region_name | IN("工具区", "我页面灯泡", "banner区") | not))'
+
+[MITM]
+hostname = %APPEND% *.api.moji.com, tnc*-*.zijieapi.com
+
